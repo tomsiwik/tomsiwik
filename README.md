@@ -3,5 +3,8 @@
 </p>
 
 ### Hi there 👋
+<<<<<<< HEAD
 
 This is my portfolio, enjoy!
+=======
+>>>>>>> 204d6ea (fix: adds configs and fixes font)
