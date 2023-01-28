@@ -3,8 +3,5 @@
 </p>
 
 ### Hi there 👋
-<<<<<<< HEAD
 
-This is my portfolio, enjoy!
-=======
->>>>>>> 204d6ea (fix: adds configs and fixes font)
+Here lyes my `~` and `.config/` to setup Yabai and Kitty and my dev environment.
