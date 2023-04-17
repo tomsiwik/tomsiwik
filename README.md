@@ -4,4 +4,4 @@
 
 ### Hi there 👋
 
-Here lyes my `~` and `.config/` to setup Yabai and Kitty and my dev environment.
+Here's my `~` & `/.config` to setup all my stuff yabai/skhd, kitty, nvim etc.
