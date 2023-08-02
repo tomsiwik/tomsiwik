@@ -13,10 +13,6 @@ gaps["left"]="3"
 gaps["right"]="3"
 gaps["inner"]="3"
 
-color["focused"]="0x00800080"
-color["normal"]="0x00FFFFFF"
-color["preselect"]="0x00FFFFFF"
-
 # Uncomment to refresh ubersicht widget on workspace change
 # Make sure to replace WIDGET NAME for the name of the ubersicht widget
 #ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"WIDGET NAME\"'"
@@ -27,9 +23,9 @@ color["preselect"]="0x00FFFFFF"
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# Multi windows active border
-yabai -m signal --add event=application_front_switched action="~/.config/yabai/active-window.sh"
-yabai -m signal --add event=space_changed action="~/.config/yabai/autodestroy.sh"
+# ===== Event Scripts setting ==================
+
+# yabai -m signal --add event=application_launched action="~/.config/yabai/active-window.sh"
 
 # ===== Tiling setting =========================
 
@@ -53,11 +49,11 @@ yabai -m config window_border_radius         9
 yabai -m config window_border_blur           on
 yabai -m config window_border_hidpi          on
 
-yabai -m config window_border               off
+yabai -m config window_border               on
 yabai -m config window_border_width         2
-yabai -m config active_window_border_color  "${color["focused"]}"
-yabai -m config normal_window_border_color  "${color["normal"]}"
-yabai -m config insert_feedback_color       "${color["preselect"]}"
+yabai -m config active_window_border_color  "0xddd7005f"
+yabai -m config normal_window_border_color  "0x00FFFFFF"
+yabai -m config insert_feedback_color       "0x00FFFFFF"
 
 yabai -m config active_window_opacity       1.0
 yabai -m config normal_window_opacity       1.0
@@ -79,6 +75,7 @@ yabai -m rule --add label="Calculator" app="^Calculator$" manage=off
 yabai -m rule --add label="Dictionary" app="^Dictionary$" manage=off
 yabai -m rule --add label="Software Update" title="Software Update" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
+yabai -m rule --add label="Spotify" app="^Spotify$" manage=on
 
 # ===== Signals ================================
 
