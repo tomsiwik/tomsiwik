@@ -6,11 +6,11 @@
             fill: #4d4d4d;
         }
         .line {
-            stroke: rgba(0,0,0,0.1);
+            stroke: #e3e3e3;
         }
         @media (prefers-color-scheme: dark) {
             path, rect { fill: #e3e3e3; }
-            .line { stroke: rgba(255,255,255,0.1); }
+            .line { stroke: #4d4d4d; }
         }
     </style>
     <g transform="matrix(1,0,0,1,-49.3917,332.651)">
