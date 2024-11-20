@@ -1,0 +1,8 @@
+defaultAppearance = "dark" # valid options: light or dark
+autoSwitchAppearance = false
+
+[header]
+  layout = "hybrid"
+  logo = "img/logo.svg"
+  logoDark = "img/logo.svg"
+  showTitle = true
