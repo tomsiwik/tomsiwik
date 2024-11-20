@@ -6,3 +6,6 @@ autoSwitchAppearance = false
   logo = "img/logo.svg"
   logoDark = "img/logo.svg"
   showTitle = true
+
+[footer]
+  showThemeAttributions = false
