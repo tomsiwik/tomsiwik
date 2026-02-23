@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="814" height="140" viewBox="0 0 814 140">
+  <style>
+    .base{font-family:-apple-system,"system-ui","Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";font-size:14px;font-weight:400}
+    .bold{font-weight:600}
+    .smaller{font-size:12px}
+    .fg{fill:#1f2328}
+    .muted{fill:#656d76}
+    .dimmed{fill:#9ca3af}
+    .dot{fill:rgba(0,0,0,.06)}
+    .rule{stroke:rgba(0,0,0,.08);stroke-width:1}
+    @media(prefers-color-scheme:dark){
+      .fg{fill:#e6edf3}
+      .muted{fill:#8b949e}
+      .dimmed{fill:#6b7280}
+      .dot{fill:rgba(255,255,255,.08)}
+      .rule{stroke:rgba(255,255,255,.08)}
+    }
+  </style>
+  <g class="base">
+  <g transform="translate(0,0)">
+    <circle class="dot" cx="16" cy="22" r="16"/>
+    <text class="smaller bold muted" x="16" y="26" text-anchor="middle">D</text>
+    <text class="fg" x="44" y="22"><tspan class="bold">dojocho.ai </tspan></text>
+    <text class="smaller muted" x="44" y="42">Shadcn of coding dojos for coding agent senseis</text>
+  </g>
+  <g transform="translate(415,0)">
+    <circle class="dot" cx="16" cy="22" r="16"/>
+    <text class="smaller bold muted" x="16" y="26" text-anchor="middle">E</text>
+    <text class="fg" x="44" y="22"><tspan class="bold">epicat.com </tspan><tspan class="dimmed" font-size="10">alpha</tspan></text>
+    <text class="smaller muted" x="44" y="42">Agentic workflow builder and hosting platform</text>
+  </g>
+  <line class="rule" x1="16" y1="70" x2="798" y2="70"/>
+  <g transform="translate(0,84)">
+    <circle class="dot" cx="16" cy="22" r="16"/>
+    <text class="smaller bold muted" x="16" y="26" text-anchor="middle">N</text>
+    <text class="fg" x="44" y="22"><tspan class="bold">nerdbooks.net </tspan><tspan class="dimmed" font-size="10">beta</tspan></text>
+    <text class="smaller muted" x="44" y="42">Librarian agent chat to find your favourite books</text>
+  </g>
+  <g transform="translate(415,84)">
+    <circle class="dot" cx="16" cy="22" r="16"/>
+    <text class="smaller bold muted" x="16" y="26" text-anchor="middle">P</text>
+    <text class="fg" x="44" y="22"><tspan class="bold">papercat.app </tspan></text>
+    <text class="smaller muted" x="44" y="42">Small apps to help your work environment</text>
+  </g>
+  </g>
+</svg>
