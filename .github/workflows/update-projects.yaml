@@ -16,7 +16,7 @@ jobs:
 
       - name: Generate projects SVG
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT }}
         run: bash gen-projects-grid.sh > assets/projects.svg
 
       - name: Commit and push if changed
