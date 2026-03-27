@@ -64,6 +64,12 @@ ENAUQQFWq16+QV7OYdYvQGwN5kybd3pOC8qJBjouPPb35XuWK5j5xoCxoCxy+RqxOjVBEATxEx/g
     <text class="smaller muted" x="44" y="40">Make your work-environment great again</text>
   </g>
   <g transform="translate(415,168)">
+    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">S</text>
+    <text class="fg" x="44" y="24"><tspan class="bold">spaghetti </tspan></text>
+    <text class="smaller muted" x="44" y="40">Micro experiments turned into research</text>
+  </g>
+  <line class="rule" x1="16" y1="238" x2="798" y2="238"/>
+  <g transform="translate(0,252)">
     <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACO0lEQVRoge2WMW8aMRiGH2yfDzVF
 FaQqS1g6MJGtEgNZMiFVagayINGplWBCUX5A5vyADpmztr8ga7p0ytbOWbI1Q4YMpJEuA3aABLjz
 teKOyo/0SqfP/vy9n2WMwePxeDwez0K2jNYSCXwxkhl7ScUO8NtoJ2MvzrwAvgGR0VcTWxv2gVsm
@@ -79,8 +85,7 @@ gg=="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">tomhacks.com </tspan></text>
     <text class="smaller muted" x="44" y="40">Portfolio website, my work, my job and my weird t…</text>
   </g>
-  <line class="rule" x1="16" y1="238" x2="798" y2="238"/>
-  <g transform="translate(0,252)">
+  <g transform="translate(415,252)">
     <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAARVBMVEVHcEwAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///95eXn19fWcnJxCQkLBwcHf398ODg4VFRUaGhrlXMLx
 AAAADHRSTlMA8fncO9eod1jAHZg/Zq6vAAABsElEQVRYhaWX2XbDIAxEvRG8gNe0//+pPcTFwaAR
