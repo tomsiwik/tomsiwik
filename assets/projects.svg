@@ -28,17 +28,23 @@
     <text class="smaller muted" x="44" y="40">Installable coding practices (katas)</text>
   </g>
   <g transform="translate(415,0)">
+    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">S</text>
+    <text class="fg" x="44" y="24"><tspan class="bold">spaghetti </tspan></text>
+    <text class="smaller muted" x="44" y="40">Micro experiments turned into research</text>
+  </g>
+  <line class="rule" x1="16" y1="70" x2="798" y2="70"/>
+  <g transform="translate(0,84)">
     <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">T</text>
     <text class="fg" x="44" y="24"><tspan class="bold">toon-reporter </tspan></text>
     <text class="smaller muted" x="44" y="40">Token-Oriented Object Notation Test Reporter</text>
   </g>
-  <line class="rule" x1="16" y1="70" x2="798" y2="70"/>
-  <g transform="translate(0,84)">
+  <g transform="translate(415,84)">
     <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">G</text>
     <text class="fg" x="44" y="24"><tspan class="bold">godmode.so </tspan></text>
     <text class="smaller muted" x="44" y="40">Better than mcp</text>
   </g>
-  <g transform="translate(415,84)">
+  <line class="rule" x1="16" y1="154" x2="798" y2="154"/>
+  <g transform="translate(0,168)">
     <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAM1BMVEVHcEwAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADbQS4qAAAAEHRSTlMA77o3Qx92DWGF
 0JHgLU2nZdNwVgAAAT9JREFUWIXtVUligCAMZJdN9P+vrYCyBEwPHtoDcwIGk8liIGRhYWHhf2IX
@@ -51,8 +57,7 @@ AAAASUVORK5CYII="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">nerdbooks.net </tspan><tspan class="dimmed" font-size="10">beta</tspan></text>
     <text class="smaller muted" x="44" y="40">Find the books you didn't know you needed</text>
   </g>
-  <line class="rule" x1="16" y1="154" x2="798" y2="154"/>
-  <g transform="translate(0,168)">
+  <g transform="translate(415,168)">
     <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAP1BMVEX///8AAADe3t7t7e2Xl5df
 X1/k5OS3t7dra2uNjY0xMTHQ0NCvr6/IyMg5OTkODg55eXlEREQlJSWfn59LS0uxg+HiAAAA5UlE
 QVRYhe2T2RaDIAxECWsEqQv9/28tqIcjrtj2MffNIRkmIIwRBEEQxB2+5VtJBKmr+xUAtKWkowS+
@@ -62,11 +67,6 @@ ENAUQQFWq16+QV7OYdYvQGwN5kybd3pOC8qJBjouPPb35XuWK5j5xoCxoCxy+RqxOjVBEATxEx/g
 0QRnZAxV4QAAAABJRU5ErkJggg=="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">papercat.app </tspan></text>
     <text class="smaller muted" x="44" y="40">Make your work-environment great again</text>
-  </g>
-  <g transform="translate(415,168)">
-    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">S</text>
-    <text class="fg" x="44" y="24"><tspan class="bold">spaghetti </tspan></text>
-    <text class="smaller muted" x="44" y="40">Micro experiments turned into research</text>
   </g>
   <line class="rule" x1="16" y1="238" x2="798" y2="238"/>
   <g transform="translate(0,252)">
