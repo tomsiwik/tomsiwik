@@ -34,14 +34,14 @@
   </g>
   <line class="rule" x1="16" y1="70" x2="798" y2="70"/>
   <g transform="translate(0,84)">
-    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">T</text>
-    <text class="fg" x="44" y="24"><tspan class="bold">toon-reporter </tspan></text>
-    <text class="smaller muted" x="44" y="40">Token-Oriented Object Notation Test Reporter</text>
-  </g>
-  <g transform="translate(415,84)">
     <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">G</text>
     <text class="fg" x="44" y="24"><tspan class="bold">godmode.so </tspan></text>
     <text class="smaller muted" x="44" y="40">Better than mcp</text>
+  </g>
+  <g transform="translate(415,84)">
+    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">T</text>
+    <text class="fg" x="44" y="24"><tspan class="bold">toon-reporter </tspan></text>
+    <text class="smaller muted" x="44" y="40">Token-Oriented Object Notation Test Reporter</text>
   </g>
   <line class="rule" x1="16" y1="154" x2="798" y2="154"/>
   <g transform="translate(0,168)">
