@@ -25,7 +25,7 @@
   <g transform="translate(0,0)">
     <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">G</text>
     <text class="fg" x="44" y="24"><tspan class="bold">godmode.so </tspan></text>
-    <text class="smaller muted" x="44" y="40">Better than mcp</text>
+    <text class="smaller muted" x="44" y="40">Agentic sandboxed swiss army knife</text>
   </g>
   <g transform="translate(415,0)">
     <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">S</text>
