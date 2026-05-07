@@ -34,7 +34,61 @@
   </g>
   <line class="rule" x1="16" y1="70" x2="798" y2="70"/>
   <g transform="translate(0,84)">
-    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">D</text>
+    <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAB3VBMVEVHcEypj2IXDxAcEQ0WDg0b
+Cw0NDA0PCQgfERAAAAwTCQxAOjc0FBSpcGJfGhlDEhIRBgheZlxZJB5LFxZqUDOSdGtkSTqYaVim
+b2FDQ0NdUEITCwt2WEKWY1egal1JJycDBghzVDKdZ1pYQTGGhoSxb2SPeFL///8AAAEGERUFHB9A
+AQKQHyADChBUOyUwBQc8QDlcFxc/Rz4LJiciAQEiKyc2NS1MRzcdIiA0OzL47cttGhleQiqOjo1p
+ZFL88c/RrnXCnmjLpWiPhnHr7OooMi0gGhZKTkTz9PPdt3VFDQ+GaELv8O+Wd0vownruyIFWTUN1
+WThSAQRPFBT/+NXAwcCWgFqkmoNiXUYVAgPn6OdRV0kwJx6FHBx1a1Slh1i9ll/JycjkzJwVLi2e
+n5+ObkdYVEBrUTSje01cXVjh1rZ7c1xiBgmakHnf394aOjetraxqSjZHPC97YkEPNDOXZVi8imDu
+4bxCLRvW19ZyBwqVWk7FqHiEfGbcwpDUy61DGxqGcljz0Y4pQj21trXs1qetmHKtood2dnHXvIn2
+6MHRuYr53aK6r5PJv6OAERSCXjnR0dBdSS99UkdpbWFbJCF5PjZ3LSeMMCmzfWWCg4L5+vl/f24A
+jQFHcEyYR2+LAAAAn3RSTlMA/Ao0XHkhFET+tJ3+9u7SiP7D7Nk2T8BTqombdoBqq9/Ji+TLGo7/
+////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+/////wBdJZuKAAAJU0lEQVRYhe1W51/i2BrGEQuOjjp9d7bvvTcnCUlICCXSQWAA6UqRKkiRpoKI
+vfc+9il/7D2Is6POzv723s/7fEjykvM87/s+54RzeLx/8Fdo5fN7enpa+Pw2Hu/1i/+R3NbSTdOF
+uULBUygoFNauavU174cf/za9vVtRwIOic4N/e9tvkIZZ8qz6rJnXzvvx9aO/Qec/U+Byw3LfoKaO
+nObSMOivVoPe7tbXXfPTf6XQ/p92WHy3glIvQ3JfAzn19o5heTB3TtD0fJV89Vd8i8PCb6E9stz2
+bfq6QC03eDhfLfqLaaMJnz7r+ia9Tad3+pw+C9geHMyLp8Y++Q+PlnO1Wi63fFbtGlsXH/apiwC8
+4bfyfvyzKWl75XQ4mnw6n2VV01eTYslxiKkbjI+fycWY+mhSLUNdibUF/r9/4rV9JdDksMccDmdM
+l9UX+zSDLI5bKZYNEkSQZSkKx12D/vnDvZ1Nh8MRa+e1PuF1t9/JzmvVabXxlN6RVY4t5itkUZM7
+VAejq6uuKxxeZazhsNanMeS3t9acuvkm3e98xZMnd7K3Prf/+n1q2p0lDbW9PU1uLKc5MgSu8n5/
+frv4ye+XXS0acn2aqFPrcMTnz95npyla8bT9fguPeG+o8PLBZiy+q835/X6cvYaFbx0cRHGcuqbY
+I00x22TTwwIuLlMnIEg/bbnHf/VTmxfs22dSNlPWt5BYHOwzzB1p/AsHB6vLg4vHcFoNu0q9TZeN
+X16ehf2JLepBATxed8GgFIjdp0SF1NeifYPFSCjMxg4OAmyZiyzv5Zv0elssXp2MGlxFp8Ppeyjw
+/tKUAUQSw4wEVrb7c0fh64JQaDLkcaHQeh0KVU4zmUpmkiyuOZ0ObcbtsN1b0y/fn1XPDvf2FgWY
+0ejSRA3nuPdKcUxxJhmHH1uvPZQhsbS7tJSIOmMVrTNjiens90voUs6fLGn3E5tpo/RI08fNCS/o
+cDG/HlCvb/nAFS30pJe28r5F1KJ3ppzKrE5P3u+ga/K9zRfTgv2iMVzrkx8LhRedC3GdWM3ItbqF
+FVooLEgWnBbnrjte0WvJSeXM6Q/P78wBjwrKCMzeBFwMJ+szzwmFQqopa9ORyfGULjW96qG9tgXb
+DHkas+gs2oxd3wkq9pdfVuJv7Yow4MZNEsm6WuwzeyA/ItNWTvXu8XA8bspqOxXlTBCIwuTkpNtN
+2qdJYJWmKj98KaGDRjlRL2Nel8iwAAv5wsJWVmlSolgqmwWZad9xxEvPjQ1q1OUTmy1jwsSeYOXL
+Sm5u/QVAiM0SMDoiAh5hAfeAWBbUI1KZAexMhfUUhBEAJEkMDjSaAdgY6Wj+LKAaLg1D9O+ISgMI
+8rZ/1POhf3hgrDzbiFhJf/31SBmf7d+RmXf633FjpWEEGSipGkuh9R3SgGro9gHUH8Y2biPpaOP+
+FrxFVExahQyA2dtXPTcCzXDAxsTER0T1DilNTEAep4LR2AgyPLEBI/OHj8jQEMwiGUBUaZEKKg0g
+sxMTMMvjRgs/wyygLv8OGYUdQkr9AgWGGtHEzYNKBXkfAKdqlAKd+EPgOwQRyW8FZCI5grjmqIYA
+aw0iCAN5uIKCGgPI21KpH0FMcCyGi+4JcJ8FjHUBobUh4FGwUOAjsuOJUIoINXDb+hjsBS3cE2Dk
+MNX5LDJKhKRQILLSEMAV8GdRP6LCaevcMT6ATExMQAPlMJnkjsDjugcfEISAApwRdu06Lt96QMGI
+GYG+A2qilx2ot/4BRnUPcOlngUdwFkZGEGQWzk5pY2ik7sEO9G4E6R8aglaHzHDO64mhByoCbNyY
+WNrYGPks0HY7qxLweUGEXcO3i6EOGZi4uY/UE2MhBOkHpdtXbxoCGwNwqQ3JQYib7YcYHoU+wvIl
+N1H/BqsAO6WPA6MgWCqNATMysIOaS3AYHMhveCCofwhAKkujoAHY3TugsN5GtJAO1u9WGl4wAl4k
+NwMFgo4/Pufp6hknmTImUeDaXlBa8R0joITHOMviNK2ICIUK2utVzEeAbcknhX+cyTTD0W/u/B29
+np/pwpJigaiYWHPqUyZvkKUjePQot+y3euaEkYjwWujBCwoyq3eu7S/KBWIxqmhu/rI/vnzVRQLX
+VuJgzaLLnpBK9rh6TC33JRJ7u7Xlxbn5SOQaP9o8MoGZk6zesnawbxABnPf0zgb76Pd518Ga06Kz
+K0lyBhBWIZXb85Huhen9/b3w3HvhymGTe2uvZggrJ7Nxi3Mtkak28+5Crry0OeIZJTmDouvnvXK2
+OLgqEMS0tn370m50bu4wBdhNu30pipIkeRJ3kJeTv9zl91xcXM1MKkmTXIomuTzHFPeKIEm4lahe
+GVuqeSL+JQC2CEFlC8XQGSWZWVlZubpbAp8OXqwoCaM5EFDLCHV6X6vTbhMSNBkmAVhY8ghZqdQk
+kGBojFDLxWh4cmWF8t47Y/A7OgFgzNFoIBpwAXv8FJ1JCERGRixX2PQ+CohFRpGYk6Nbic0lI4ax
+wZWOh3tje5mSy8qnakYCFg9d4vHwKsox66JwJyHBZKF0GXWNMxjcoU8X9hdZL6/1Ab015XabvJxZ
+hqprtd3EHjeOARkBxIxRjDHypEiUdHHjDKfWmtZT2hmF9+enDwR4j2yZU8qKourN3f0mUs9NSTc1
+icQ2MMsCgbQsiaVlIUa6LpcQvTMyT+eF4gn/Pr/NXrG5pd7OpgWtDcT0IITW4m6lblOqRhkmz4XV
+IrVIFBCH1gWLm4kAb8X7sILmlzzby/lJK+XTmcSZmKRXvVs+Z06121gecKJ0OmkWMTIuzaHyNa3W
+0sxraeF9he951cnHXiolZzBBYN1gH+sFlaV8kls0EeIpCcOJxC7OmICHPIuuqemhhw0bfvvpxaNn
+VlQWipaZRfcnsxiTg+R6MhqVyiWomCjLpXnHqmXB57Nbnv+ZQF2jrZ2iTUxIKpLEfAFsPIChO4ap
+pFqtDoVCaZ9WvxpLxZtSev23BJrb+R2cxyoWy7BVmZ9IjufFAowJBBiOk2R0JyfTWosubouRz78+
+6X424l+9pVGWthIirHz+CSpE0wSBJc2ctOIOmp6SbntWaT/5FhvixfctdXTQ3k4BYOC6nwrlAxKU
+QOGhswPuxY8zbvev30x/14yWZzTtta6wKIp2emmaXvnuRWtHRwvvT47p30Jbe0/3sycQz7p72v8+
+7R/8H/gvCVrpnpPGpNUAAAAASUVORK5CYII="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">dojocho.ai </tspan></text>
     <text class="smaller muted" x="44" y="40">Installable coding practices (katas)</text>
   </g>
