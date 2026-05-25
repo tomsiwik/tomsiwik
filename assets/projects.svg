@@ -111,13 +111,7 @@ U8AkkStjpKowehnvG+mKXH1pJKaVuzNsKz/+mZ7/zl8HSi9ZwTRQno+0eahaOlQtESA5o2N90XkS
     <text class="smaller muted" x="44" y="40">Find the books you didn't know you needed</text>
   </g>
   <g transform="translate(415,168)">
-    <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAP1BMVEX///8AAADe3t7t7e2Xl5df
-X1/k5OS3t7dra2uNjY0xMTHQ0NCvr6/IyMg5OTkODg55eXlEREQlJSWfn59LS0uxg+HiAAAA5UlE
-QVRYhe2T2RaDIAxECWsEqQv9/28tqIcjrtj2MffNIRkmIIwRBEEQxB2+5VtJBKmr+xUAtKWkowS+
-st+kYhCFhkl6VRo0k0E5hE1SV2ngDxLIJKlKA9bHYrPR4gyDOKw+gvt9ra6/hD8j6oOnal2Wt+n0
-O5m/tTGO61NLaTuAEUOedv4j8pU2I9hBYXDXiVcp+Nw/5rUHwyx7TgbPzt+ZsGpwAH3Og31zmT4i
-ENAUQQFWq16+QV7OYdYvQGwN5kybd3pOC8qJBjouPPb35XuWK5j5xoCxoCxy+RqxOjVBEATxEx/g
-0QRnZAxV4QAAAABJRU5ErkJggg=="/></g>
+    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">P</text>
     <text class="fg" x="44" y="24"><tspan class="bold">papercat.app </tspan></text>
     <text class="smaller muted" x="44" y="40">Make your work-environment great again</text>
   </g>
