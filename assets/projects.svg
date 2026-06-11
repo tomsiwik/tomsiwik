@@ -23,7 +23,10 @@
   </defs>
   <g class="base">
   <g transform="translate(0,0)">
-    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">G</text>
+    <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAElBMVEX///8AAADNzc0tLS12dnaX
+l5e/xgeRAAAAaElEQVRYhe2VMQ7AMAgDA4H/f7kLTmcnUpUi3+7DgyXGEOJz3GaxLSgkaCEwMhdF
+OuAEibvB5d4GEvxY4AlqPbm7n+RyErQQ+NrN2hEnCBwmcxLcKWD3AxKPjGxgp82nBC0ExbZAiAMe
+ECQDczSh+P0AAAAASUVORK5CYII="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">godmode.so </tspan></text>
     <text class="smaller muted" x="44" y="40">Agentic sandboxed swiss army knife</text>
   </g>
