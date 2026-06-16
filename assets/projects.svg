@@ -142,7 +142,17 @@ gg=="/></g>
     <text class="smaller muted" x="44" y="40">Portfolio website, my work, my job and my weird t…</text>
   </g>
   <g transform="translate(415,252)">
-    <circle class="dot" cx="16" cy="28" r="16"/><text class="smaller bold muted" x="16" y="32" text-anchor="middle">E</text>
+    <g transform="translate(0,12)" clip-path="url(#circle-clip)"><image width="32" height="32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAATlBMVEVHcEwAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///95eXn19fVCQkLBwcHf39+UlJSgoKAO
+Dg4XFxe3GST9AAAAD3RSTlMAHVA/fteo9cBwYDiY3NvEqJvWAAABu0lEQVRYhaWX25qDIAyE1Uo9
+Cx63ff8X3bIWq5CJdDO34c+nTIAkSZCaqi1VoXWhyrZq4DJaaa60J5Wn0Xjd+fSmvo7CK5reVF3i
+WcHxrx3JeL7kcauSwW/XuNUN8Xkcr3VO8/dYXuu7kCczfMUTGaL/38nbh8j9P+rsxfe81kc+on5C
+HSoqY5Y9cehT1Uz9TyOOFY7nzt9iBhx0Z5PhB2OYT3jvY82sGI0xPzi83TDg/rFajdUDxjvLp8wH
+/PFmxgtSvojnLYGZ4Apb0MH9u2t682aBSxTrweISMFa+3g8YG3aesbJhqmj8JMBWVkmLQqs5ClnZ
+4oN44qGVJTRhPidAVip0EiePR1YWyMXFT4CsBAmGgEdWgl8YwwS0lQW9iSvB01Yq2kaSJ60syULy
+LWSsbKlSDix0IqysqMMUWugUWtkQx5mw0Cm0krpQKAudfCsVcaXRFjp5Vubhpfpked/KNLjWH9PA
+aj3xPfGw4EeAUP3/5mBTxOPKam98L9pbpP15ZxsMRoe2WdriyJsseZsnbjTlra682Za3+/KBQz7y
+JOKhK5GPfYl48LSqe5ru4kZfK+HwvSly/P8Fv6G9vnFfNrkAAAAASUVORK5CYII="/></g>
     <text class="fg" x="44" y="24"><tspan class="bold">epicat.com </tspan><tspan class="dimmed" font-size="10">beta</tspan></text>
     <text class="smaller muted" x="44" y="40">No-code agentic team builder</text>
   </g>
