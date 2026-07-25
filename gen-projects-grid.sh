@@ -69,7 +69,7 @@ fetch_icon() {
       image/png)
         cp "$tmp/raw" "$tmp/out.png" ;;
       image/svg+xml|text/xml|application/xml|text/plain)
-        head -c 1024 "$tmp/raw" | grep -qi '<svg' || continue
+        head -c 1024 "$tmp/raw" | grep -qai '<svg' || continue
         rsvg-convert -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
       *)
         continue ;;
