@@ -44,8 +44,8 @@ fetch_icon() {
       [[ -n "$href" ]] && candidates+=("$href")
     done < <(
       tr '\n' ' ' < "$tmp/index.html" \
-        | grep -oiE '<link[^>]+rel="[a-z ]*icon"[^>]*>' \
-        | grep -oiE 'href="[^"]+"' \
+        | grep -oaiE '<link[^>]+rel="[a-z ]*icon"[^>]*>' \
+        | grep -oaiE 'href="[^"]+"' \
         | sed -E 's/^[hH][rR][eE][fF]="//; s/"$//'
     )
   fi
