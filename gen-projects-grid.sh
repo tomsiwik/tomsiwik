@@ -4,7 +4,11 @@ set -euo pipefail
 # ── Fetch repos with "active" topic from GitHub ──
 json=""
 for src in "user/repos?affiliation=owner&per_page=100" orgs/wild-js/repos orgs/mvp-guru/repos; do
-  json+="$(gh api --paginate "$src" 2>/dev/null)"
+  if ! out="$(gh api --paginate "$src" 2>&1)"; then
+    echo "gh api $src failed: $out" >&2
+    exit 1
+  fi
+  json+="$out"
 done
 
 projects=()
@@ -27,11 +31,71 @@ if [[ ${#projects[@]} -eq 0 ]]; then
 fi
 
 # ── Fetch favicons ──
+# Prefer the icon the site itself declares/serves; Google's s2 proxy is only a
+# last resort because it caches stale icons (e.g. a hosting provider default).
+fetch_icon() {
+  local domain="$1"
+  local tmp href url mime
+  tmp="$(mktemp -d)"
+
+  local candidates=()
+  if curl -sL --max-time 15 "https://${domain}/" -o "$tmp/index.html" 2>/dev/null; then
+    while IFS= read -r href; do
+      [[ -n "$href" ]] && candidates+=("$href")
+    done < <(
+      tr '\n' ' ' < "$tmp/index.html" \
+        | grep -oiE '<link[^>]+rel="[a-z ]*icon"[^>]*>' \
+        | grep -oiE 'href="[^"]+"' \
+        | sed -E 's/^[hH][rR][eE][fF]="//; s/"$//'
+    )
+  fi
+  candidates+=(/favicon.svg /favicon.png /apple-touch-icon.png)
+
+  for href in "${candidates[@]}"; do
+    case "$href" in
+      https://*|http://*) url="$href" ;;
+      //*)                url="https:$href" ;;
+      /*)                 url="https://${domain}${href}" ;;
+      ./*)                url="https://${domain}/${href#./}" ;;
+      *)                  url="https://${domain}/${href}" ;;
+    esac
+
+    curl -sfL --max-time 15 "$url" -o "$tmp/raw" 2>/dev/null || continue
+    [[ -s "$tmp/raw" ]] || continue
+
+    # Servers commonly answer 200 with an HTML fallback page, so sniff content.
+    mime="$(file -b --mime-type "$tmp/raw")"
+    case "$mime" in
+      image/png)
+        cp "$tmp/raw" "$tmp/out.png" ;;
+      image/svg+xml|text/xml|application/xml|text/plain)
+        head -c 1024 "$tmp/raw" | grep -qi '<svg' || continue
+        rsvg-convert -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
+      *)
+        continue ;;
+    esac
+
+    base64 < "$tmp/out.png" | tr -d '\n'
+    rm -rf "$tmp"
+    return 0
+  done
+
+  if curl -sfL --max-time 15 "https://www.google.com/s2/favicons?domain=${domain}&sz=64" -o "$tmp/out.png" 2>/dev/null \
+     && [[ "$(file -b --mime-type "$tmp/out.png")" == image/png ]]; then
+    base64 < "$tmp/out.png" | tr -d '\n'
+    rm -rf "$tmp"
+    return 0
+  fi
+
+  rm -rf "$tmp"
+  return 1
+}
+
 favicons=()
 for entry in "${projects[@]}"; do
   IFS='|' read -r name _ _ <<< "$entry"
   if [[ "$name" == *.* ]]; then
-    favicons+=("$(curl -sfL "https://www.google.com/s2/favicons?domain=${name}&sz=64" | base64 || true)")
+    favicons+=("$(fetch_icon "$name" || true)")
   else
     favicons+=("")
   fi
@@ -105,7 +169,8 @@ for i in "${!projects[@]}"; do
   # Icon: 32x32 displayed (64px fetched for retina), vertically centered in row_h
   icon_y=$(( (row_h - icon_size) / 2 ))
   if [[ -n "${favicons[$i]}" ]]; then
-    icon="<g transform=\"translate(0,$icon_y)\" clip-path=\"url(#circle-clip)\"><image width=\"$icon_size\" height=\"$icon_size\" href=\"data:image/png;base64,${favicons[$i]}\"/></g>"
+    # White disc keeps transparent monochrome favicons legible on both themes
+    icon="<g transform=\"translate(0,$icon_y)\" clip-path=\"url(#circle-clip)\"><rect width=\"$icon_size\" height=\"$icon_size\" fill=\"#fff\"/><image width=\"$icon_size\" height=\"$icon_size\" href=\"data:image/png;base64,${favicons[$i]}\"/></g>"
   else
     initial=$(printf '%s' "${name:0:1}" | tr '[:lower:]' '[:upper:]')
     icon="<circle class=\"dot\" cx=\"16\" cy=\"$((row_h / 2))\" r=\"16\"/><text class=\"smaller bold muted\" x=\"16\" y=\"$((row_h / 2 + 4))\" text-anchor=\"middle\">$initial</text>"
