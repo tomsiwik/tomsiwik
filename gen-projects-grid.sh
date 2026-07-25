@@ -31,11 +31,21 @@ if [[ ${#projects[@]} -eq 0 ]]; then
 fi
 
 # ── Fetch favicons ──
+# ImageMagick 7 ships `magick`, 6 ships `convert`/`identify`; absent either, ICO
+# icons are skipped and the domain falls through to the next candidate.
+if command -v magick >/dev/null 2>&1; then
+  im() { magick "$@"; }; im_identify() { magick identify "$@"; }
+elif command -v convert >/dev/null 2>&1; then
+  im() { convert "$@"; }; im_identify() { identify "$@"; }
+else
+  im() { return 1; }; im_identify() { return 1; }
+fi
+
 # Prefer the icon the site itself declares/serves; Google's s2 proxy is only a
 # last resort because it caches stale icons (e.g. a hosting provider default).
 fetch_icon() {
   local domain="$1"
-  local tmp href url mime
+  local tmp href url mime frame
   tmp="$(mktemp -d)"
 
   local candidates=()
@@ -71,6 +81,11 @@ fetch_icon() {
       image/svg+xml|text/xml|application/xml|text/plain)
         head -c 1024 "$tmp/raw" | grep -qai '<svg' || continue
         rsvg-convert -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
+      image/vnd.microsoft.icon|image/x-icon)
+        # An .ico holds several sizes; take the largest frame, not frame 0.
+        frame="$(im_identify -format '%[fx:w*h] %s\n' "$tmp/raw" 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2)" || continue
+        [[ -n "$frame" ]] || continue
+        im "$tmp/raw[$frame]" -resize 64x64 "$tmp/out.png" 2>/dev/null || continue ;;
       *)
         continue ;;
     esac

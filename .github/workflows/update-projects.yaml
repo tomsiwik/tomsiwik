@@ -14,8 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install rsvg-convert
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin
+      - name: Install image converters
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin imagemagick
 
       - name: Generate projects SVG
         env:
