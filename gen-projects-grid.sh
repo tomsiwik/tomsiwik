@@ -59,7 +59,26 @@ fetch_icon() {
         | sed -E 's/^[hH][rR][eE][fF]="//; s/"$//'
     )
   fi
-  candidates+=(/favicon.svg /favicon.png /apple-touch-icon.png)
+  candidates+=(/favicon.svg /favicon.png /apple-touch-icon.png /favicon.ico)
+
+  # Prefer vector, then raster, then ICO last: papercat.app declares its .ico
+  # before its .svg, and a 48px frame would lose to the scalable original.
+  local svgs=() others=() icos=() seen=""
+  for href in "${candidates[@]}"; do
+    # The declared <link> and the conventional paths often name the same file
+    case "$seen" in *"|${href#.}|"*) continue ;; esac
+    seen="${seen}|${href#.}|"
+    case "$href" in
+      *.svg|*.svg\?*|*.SVG) svgs+=("$href") ;;
+      *.ico|*.ico\?*|*.ICO) icos+=("$href") ;;
+      *)                    others+=("$href") ;;
+    esac
+  done
+  candidates=(
+    ${svgs[@]+"${svgs[@]}"}
+    ${others[@]+"${others[@]}"}
+    ${icos[@]+"${icos[@]}"}
+  )
 
   for href in "${candidates[@]}"; do
     case "$href" in
@@ -80,10 +99,12 @@ fetch_icon() {
         cp "$tmp/raw" "$tmp/out.png" ;;
       image/svg+xml|text/xml|application/xml|text/plain)
         head -c 1024 "$tmp/raw" | grep -qai '<svg' || continue
-        rsvg-convert -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
+        # -a, or a non-square viewBox gets squashed (epicat.com is 25x29).
+        rsvg-convert -a -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
       image/vnd.microsoft.icon|image/x-icon)
         # An .ico holds several sizes; take the largest frame, not frame 0.
-        if ! frame="$(im_identify -format '%[fx:w*h] %s\n' "$tmp/raw" 2>&1 | sort -rn | head -1 | cut -d' ' -f2)" || [[ -z "$frame" ]]; then
+        # ImageMagick 6 silently emits nothing for '%[fx:w*h]', so use %w/%s.
+        if ! frame="$(im_identify -format '%w %s\n' "$tmp/raw" 2>&1 | sort -rn | head -1 | cut -d' ' -f2)" || [[ -z "$frame" ]]; then
           echo "warn: $domain: cannot read ICO frames from $url" >&2
           continue
         fi
@@ -191,7 +212,9 @@ for i in "${!projects[@]}"; do
   icon_y=$(( (row_h - icon_size) / 2 ))
   if [[ -n "${favicons[$i]}" ]]; then
     # White disc keeps transparent monochrome favicons legible on both themes
-    icon="<g transform=\"translate(0,$icon_y)\" clip-path=\"url(#circle-clip)\"><rect width=\"$icon_size\" height=\"$icon_size\" fill=\"#fff\"/><image width=\"$icon_size\" height=\"$icon_size\" href=\"data:image/png;base64,${favicons[$i]}\"/></g>"
+    # preserveAspectRatio is explicit so non-square icons letterbox rather than
+    # stretch, and stay centred in the disc on every renderer.
+    icon="<g transform=\"translate(0,$icon_y)\" clip-path=\"url(#circle-clip)\"><rect width=\"$icon_size\" height=\"$icon_size\" fill=\"#fff\"/><image width=\"$icon_size\" height=\"$icon_size\" preserveAspectRatio=\"xMidYMid meet\" href=\"data:image/png;base64,${favicons[$i]}\"/></g>"
   else
     initial=$(printf '%s' "${name:0:1}" | tr '[:lower:]' '[:upper:]')
     icon="<circle class=\"dot\" cx=\"16\" cy=\"$((row_h / 2))\" r=\"16\"/><text class=\"smaller bold muted\" x=\"16\" y=\"$((row_h / 2 + 4))\" text-anchor=\"middle\">$initial</text>"

@@ -15,18 +15,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install image converters
-        run: |
-          sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin imagemagick
-          echo "magick: $(command -v magick || echo MISSING)"
-          echo "convert: $(command -v convert || echo MISSING)"
-          echo "identify: $(command -v identify || echo MISSING)"
-          dpkg -l | grep -i imagemagick || echo "no imagemagick packages"
-          curl -sfL https://tomhacks.com/favicon.ico -o /tmp/t.ico
-          echo "--- file: $(file -b --mime-type /tmp/t.ico) size: $(stat -c%s /tmp/t.ico)"
-          echo "--- identify -format raw output:"
-          identify -format '%[fx:w*h] %s\n' /tmp/t.ico; echo "exit=$?"
-          echo "--- plain identify:"
-          identify /tmp/t.ico; echo "exit=$?"
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq librsvg2-bin imagemagick
 
       - name: Generate projects SVG
         env:
