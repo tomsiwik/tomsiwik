@@ -21,6 +21,12 @@ jobs:
           echo "convert: $(command -v convert || echo MISSING)"
           echo "identify: $(command -v identify || echo MISSING)"
           dpkg -l | grep -i imagemagick || echo "no imagemagick packages"
+          curl -sfL https://tomhacks.com/favicon.ico -o /tmp/t.ico
+          echo "--- file: $(file -b --mime-type /tmp/t.ico) size: $(stat -c%s /tmp/t.ico)"
+          echo "--- identify -format raw output:"
+          identify -format '%[fx:w*h] %s\n' /tmp/t.ico; echo "exit=$?"
+          echo "--- plain identify:"
+          identify /tmp/t.ico; echo "exit=$?"
 
       - name: Generate projects SVG
         env:
