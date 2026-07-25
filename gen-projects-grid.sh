@@ -45,7 +45,7 @@ fi
 # last resort because it caches stale icons (e.g. a hosting provider default).
 fetch_icon() {
   local domain="$1"
-  local tmp href url mime frame
+  local tmp href url mime frame frames
   tmp="$(mktemp -d)"
 
   local candidates=()
@@ -102,13 +102,18 @@ fetch_icon() {
         # -a, or a non-square viewBox gets squashed (epicat.com is 25x29).
         rsvg-convert -a -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
       image/vnd.microsoft.icon|image/x-icon)
+        # ImageMagick needs the extension to pick the ICO coder; it will not
+        # sniff it from an extensionless file. It also emits nothing at all for
+        # '%[fx:w*h]' on v6, hence %w/%s.
+        cp "$tmp/raw" "$tmp/raw.ico"
+        frames="$(im_identify -format '%w %s\n' "$tmp/raw.ico" 2>&1)"
         # An .ico holds several sizes; take the largest frame, not frame 0.
-        # ImageMagick 6 silently emits nothing for '%[fx:w*h]', so use %w/%s.
-        if ! frame="$(im_identify -format '%w %s\n' "$tmp/raw" 2>&1 | sort -rn | head -1 | cut -d' ' -f2)" || [[ -z "$frame" ]]; then
-          echo "warn: $domain: cannot read ICO frames from $url" >&2
+        frame="$(printf '%s\n' "$frames" | sort -rn | head -1 | cut -d' ' -f2)"
+        if [[ -z "$frame" ]]; then
+          echo "warn: $domain: cannot read ICO frames from $url (identify said: ${frames:-<no output>})" >&2
           continue
         fi
-        if ! im "$tmp/raw[$frame]" -resize 64x64 "$tmp/out.png" 2>&1 >/dev/null; then
+        if ! im "$tmp/raw.ico[$frame]" -resize 64x64 "$tmp/out.png" 2>&1 >/dev/null; then
           echo "warn: $domain: ICO frame $frame decode failed for $url" >&2
           continue
         fi
