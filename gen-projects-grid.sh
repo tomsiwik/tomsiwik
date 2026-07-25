@@ -83,9 +83,15 @@ fetch_icon() {
         rsvg-convert -w 64 -h 64 "$tmp/raw" -o "$tmp/out.png" 2>/dev/null || continue ;;
       image/vnd.microsoft.icon|image/x-icon)
         # An .ico holds several sizes; take the largest frame, not frame 0.
-        frame="$(im_identify -format '%[fx:w*h] %s\n' "$tmp/raw" 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2)" || continue
-        [[ -n "$frame" ]] || continue
-        im "$tmp/raw[$frame]" -resize 64x64 "$tmp/out.png" 2>/dev/null || continue ;;
+        if ! frame="$(im_identify -format '%[fx:w*h] %s\n' "$tmp/raw" 2>&1 | sort -rn | head -1 | cut -d' ' -f2)" || [[ -z "$frame" ]]; then
+          echo "warn: $domain: cannot read ICO frames from $url" >&2
+          continue
+        fi
+        if ! im "$tmp/raw[$frame]" -resize 64x64 "$tmp/out.png" 2>&1 >/dev/null; then
+          echo "warn: $domain: ICO frame $frame decode failed for $url" >&2
+          continue
+        fi
+        [[ -s "$tmp/out.png" ]] || { echo "warn: $domain: empty ICO output" >&2; continue; } ;;
       *)
         continue ;;
     esac
