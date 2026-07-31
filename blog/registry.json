@@ -1,0 +1,40 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "tomhacks",
+  "homepage": "https://tomhacks.com",
+  "items": [
+    {
+      "name": "profile-avatar",
+      "title": "Profile Avatar",
+      "description": "A compact profile avatar with an availability indicator.",
+      "type": "registry:component",
+      "files": [
+        {
+          "path": "src/components/registry/profile-avatar.tsx",
+          "type": "registry:component",
+          "target": "components/registry/profile-avatar.tsx"
+        }
+      ],
+      "categories": ["profile"]
+    },
+    {
+      "name": "author-card",
+      "title": "Author Card",
+      "description": "A linked author identity block for articles and profile pages.",
+      "type": "registry:block",
+      "files": [
+        {
+          "path": "src/components/registry/author-card.tsx",
+          "type": "registry:component",
+          "target": "components/registry/author-card.tsx"
+        },
+        {
+          "path": "src/components/registry/profile-avatar.tsx",
+          "type": "registry:component",
+          "target": "components/registry/profile-avatar.tsx"
+        }
+      ],
+      "categories": ["blog"]
+    }
+  ]
+}

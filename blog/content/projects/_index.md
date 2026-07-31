@@ -1,1 +1,0 @@
-Hi. These are my projects. Bye for now.

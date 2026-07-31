@@ -1,0 +1,37 @@
+---
+title: Building navigation that works without a mouse
+description: Keyboard focus, useful labels, and predictable behavior turn a menu into navigation people can trust.
+date: 2026-07-28
+author: Tom Siwik
+category: Accessibility
+tags:
+  - accessibility
+  - navigation
+cover: /images/work/epoch/cover.jpg
+---
+
+Navigation begins with links in a sensible document order. Visual treatment can change across breakpoints, but the underlying choices should remain predictable.
+
+## The minimum contract
+
+- Every destination is a real link.
+- Focus is visible against every background.
+- The mobile trigger exposes its expanded state.
+- Escape closes an open overlay and restores focus.
+
+```tsx
+<button
+  type="button"
+  aria-expanded={open}
+  aria-controls="site-navigation"
+  onClick={() => setOpen((value) => !value)}
+>
+  Menu
+</button>
+```
+
+## Test the sequence
+
+Put the mouse aside. Tab from the address bar through the page, activate the menu, follow a link, and confirm that focus lands somewhere useful on the new page.
+
+> Accessibility testing becomes much easier when it is treated as interaction testing, not a final checklist.
