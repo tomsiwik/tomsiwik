@@ -8,6 +8,7 @@ import * as React from 'react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 import { HatchSectionHeader } from './hatch-section-header';
@@ -84,27 +85,15 @@ function PricingFeature({ children }: { children: React.ReactNode }) {
   );
 }
 
-const cardEase: [number, number, number, number] = [0.22, 0.61, 0.36, 1];
-
-function PricingCardView({
-  card,
-  index = 0,
-}: {
-  card: PricingCard;
-  index?: number;
-}) {
+function PricingCardView({ card }: { card: PricingCard }) {
   const isFeatured = !!card.featured;
 
   return (
     <motion.article
-      initial={{ opacity: 0, y: 14 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      variants={fadeVariants}
+      initial="hidden"
+      whileInView="show"
       viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.55,
-        delay: index * 0.1,
-        ease: cardEase,
-      }}
       className={cn(
         'bg-muted bg-pricing-card relative flex min-h-[480px] flex-col rounded-2xl px-7 py-7 sm:px-8 sm:py-8',
       )}
@@ -208,8 +197,8 @@ export default function HatchPricing({
             !hideHeader && 'section-gap',
           )}
         >
-          {CARDS.map((c, i) => (
-            <PricingCardView key={c.title} card={c} index={i} />
+          {CARDS.map((c) => (
+            <PricingCardView key={c.title} card={c} />
           ))}
         </div>
       </div>

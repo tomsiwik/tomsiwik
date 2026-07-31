@@ -7,6 +7,7 @@ import Link from '@/components/link';
 
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/lib/content';
+import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 import { HatchSectionHeader } from './hatch-section-header';
@@ -16,33 +17,6 @@ type Props = {
   limit?: number;
   /** Hide section title + description (e.g. minimal homepage). */
   hideHeader?: boolean;
-};
-
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      delayChildren: 0.18,
-      staggerChildren: 0.14,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: {
-    opacity: 0,
-    y: 18,
-    filter: 'blur(4px)',
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: {
-      duration: 0.6,
-      ease: [0.22, 0.61, 0.36, 1] as const,
-    },
-  },
 };
 
 export default function HatchSelectedProjects({
@@ -68,11 +42,7 @@ export default function HatchSelectedProjects({
             descriptionClassName="text-end"
           />
         )}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.35 }}
+        <div
           className={cn(
             'grid gap-10 lg:grid-cols-3',
             hideHeader ? 'mt-0' : 'mt-10 lg:mt-12',
@@ -81,7 +51,10 @@ export default function HatchSelectedProjects({
           {items.map((p, i) => (
             <motion.article
               key={p.slug}
-              variants={itemVariants}
+              variants={fadeVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.35 }}
               className={cn(i >= 3 && 'hidden lg:block')}
             >
               <Link href={`/work/${p.slug}`} className="group block">
@@ -123,7 +96,7 @@ export default function HatchSelectedProjects({
               </Link>
             </motion.article>
           ))}
-        </motion.div>
+        </div>
 
         <div
           className={cn(
