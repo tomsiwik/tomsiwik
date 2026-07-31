@@ -1,0 +1,76 @@
+---
+title: An MDX component playground
+description: A formatting stress test for prose, code, tables, callouts, and a lazily loaded React component.
+date: 2026-07-30
+author: Tom Siwik
+category: Engineering
+tags:
+  - MDX
+  - React
+  - testing
+cover: /images/work/pitch/cover.jpg
+---
+
+This article is deliberately varied. It checks **strong text**, *emphasis*, [links](https://tanstack.com/), inline `code`, and longer paragraphs at realistic reading widths.
+
+<Callout title="Formatting fixture">
+  This is sample content used to verify the article system before real posts are added.
+</Callout>
+
+## Code blocks
+
+The highlighted block below should scroll horizontally on narrow screens without widening the page.
+
+```tsx title="counter.tsx"
+type CounterProps = {
+  initialValue?: number;
+};
+
+export function Counter({ initialValue = 0 }: CounterProps) {
+  const [count, setCount] = useState(initialValue);
+
+  return (
+    <button type="button" onClick={() => setCount((value) => value + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+Inline code such as `pnpm build` should remain readable inside a sentence.
+
+## A code-split React component
+
+The counter is declared in MDX but its implementation is loaded with `React.lazy()`, producing a separate client chunk.
+
+<InteractiveExample initialCount={2} />
+
+## Lists and quotations
+
+1. Write the smallest useful example.
+2. Test it with a keyboard and a narrow viewport.
+3. Confirm that the generated static page still hydrates.
+
+> Good formatting should make the structure obvious without distracting from the content.
+
+### Nested details
+
+- Semantic HTML
+  - Useful headings
+  - Descriptive links
+- Resilient layout
+  - Wrapped inline code
+  - Scrollable code blocks
+
+## Tables
+
+| Concern | Probe | Expected result |
+| --- | --- | --- |
+| Typography | Inspect headings and prose | Clear hierarchy |
+| Code | Resize to mobile | Horizontal scrolling |
+| React | Click both controls | Count updates |
+| Static output | Build the site | Dedicated component chunk |
+
+---
+
+That covers the main content shapes a normal technical article is likely to need.

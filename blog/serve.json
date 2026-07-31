@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "!/api/**",
+      "destination": "/tomsiwik/_shell.html"
+    }
+  ]
+}
