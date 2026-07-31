@@ -137,7 +137,7 @@ export default function HatchWhatICanDo({
             <Button
               asChild
               variant="outline"
-              className="mt-1 h-10 w-fit shrink-0 rounded-full px-5 text-sm"
+              className="mt-1 h-10 w-fit shrink-0 px-5 text-sm"
             >
               <Link href={ctaHref}>
                 {ctaLabel} <ArrowUpRight className="size-4" />

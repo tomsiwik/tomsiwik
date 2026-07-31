@@ -104,6 +104,7 @@ export default function Navbar() {
               alt="Tom Hacks"
               width={44}
               height={28}
+              className="dark:invert"
               priority
             />
           </Link>
@@ -136,7 +137,7 @@ export default function Navbar() {
               asChild
               variant="outline"
               className={cn(
-                'hover:bg-muted h-10 shrink rounded-full px-3 text-sm shadow-xs sm:px-4',
+                'hover:bg-muted h-10 shrink px-3 text-sm shadow-xs sm:px-4',
                 'max-w-[min(50vw,11rem)] sm:max-w-[50vw]',
               )}
             >
@@ -152,7 +153,7 @@ export default function Navbar() {
               type="button"
               className={cn(
                 'lg:hidden',
-                'bg-background inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[15px] shadow-xs',
+                'bg-background inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-[4px] shadow-xs',
                 'text-muted-foreground hover:text-foreground transition-colors',
               )}
               onClick={() => setIsMenuOpen((v) => !v)}

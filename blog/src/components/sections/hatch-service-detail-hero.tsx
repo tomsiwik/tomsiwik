@@ -37,7 +37,7 @@ export default function HatchServiceDetail({
         <Button
           asChild
           variant="outline"
-          className="mb-6 h-7 w-auto rounded-full px-3 text-xs"
+          className="mb-6 h-7 w-auto px-3 text-xs"
         >
           <Link href={backHref}>
             <ArrowLeft className="mr-1 size-3.5" />
@@ -63,14 +63,14 @@ export default function HatchServiceDetail({
         </div>
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-          <Button asChild variant="hatch" className="h-10 rounded-full px-5">
+          <Button asChild variant="hatch" className="h-10 px-5">
             <Link href={primaryCtaHref}>
               {primaryCtaLabel}
               <ArrowRight className="ml-1 size-4" />
             </Link>
           </Button>
 
-          <Button asChild variant="outline" className="h-10 rounded-full px-5">
+          <Button asChild variant="outline" className="h-10 px-5">
             <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
           </Button>
         </div>

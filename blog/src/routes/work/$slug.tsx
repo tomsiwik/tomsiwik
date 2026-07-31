@@ -74,7 +74,7 @@ function WorkSlugPage() {
           <Button
             asChild
             variant="outline"
-            className="mb-6 h-7 w-auto rounded-full px-3 text-xs"
+            className="mb-6 h-7 w-auto px-3 text-xs"
           >
             <Link href="/work">
               <ArrowLeft className="mr-1 size-3.5" />
@@ -98,7 +98,7 @@ function WorkSlugPage() {
             </h1>
 
             {project.liveUrl ? (
-              <Button asChild variant="outline" className="h-9 w-auto rounded-full px-4 text-sm">
+              <Button asChild variant="outline" className="h-9 w-auto px-4 text-sm">
                 <Link href={project.liveUrl} target="_blank" rel="noreferrer">
                   View live <ArrowRight className="ml-1 size-4" />
                 </Link>

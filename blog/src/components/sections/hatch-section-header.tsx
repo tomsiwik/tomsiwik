@@ -50,7 +50,7 @@ export function HatchSectionHeader({
             height={logoHeight}
             priority={false}
             className={cn(
-              'brightness-[0.72] contrast-[1.08] dark:brightness-[0.88]',
+              'opacity-80 dark:invert dark:opacity-100',
               logoClassName,
             )}
           />

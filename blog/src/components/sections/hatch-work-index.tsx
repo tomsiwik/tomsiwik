@@ -133,7 +133,7 @@ export default function HatchWorkIndex({
           {canLoadMore ? (
             <Button
               variant="outline"
-              className="h-10 rounded-full px-5 text-sm font-semibold sm:w-auto"
+              className="h-10 px-5 text-sm font-semibold sm:w-auto"
               onClick={onLoadMore}
             >
               Load more <ArrowRight className="ml-1 size-4" />
@@ -142,7 +142,7 @@ export default function HatchWorkIndex({
             <Button
               asChild
               variant="outline"
-              className="h-10 rounded-full px-5 text-sm font-semibold sm:w-auto"
+              className="h-10 px-5 text-sm font-semibold sm:w-auto"
             >
               <Link href="/contact">
                 Let’s work together <ArrowRight className="ml-1 size-4" />

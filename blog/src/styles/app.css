@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
 
 @plugin '@tailwindcss/typography';
@@ -379,6 +379,7 @@
 @layer components {
   button {
     cursor: pointer;
+    border-radius: 0.25rem !important;
   }
   [class*='border'] {
     @apply border-border;

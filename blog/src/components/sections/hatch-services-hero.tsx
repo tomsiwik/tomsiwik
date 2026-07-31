@@ -132,7 +132,7 @@ export default function ServicesHero() {
             <Button
               asChild
               variant="hatch"
-              className="h-10 w-full justify-center rounded-full px-5 sm:w-auto sm:min-w-[140px]"
+              className="h-10 w-full justify-center px-5 sm:w-auto sm:min-w-[140px]"
             >
               <Link href="/contact">
                 Get a quote <ArrowRight className="ml-1 size-4" />
@@ -141,7 +141,7 @@ export default function ServicesHero() {
             <Button
               asChild
               variant="outline"
-              className="h-10 w-full justify-center rounded-full px-5 sm:w-auto sm:min-w-[140px]"
+              className="h-10 w-full justify-center px-5 sm:w-auto sm:min-w-[140px]"
             >
               <Link href="/contact">Book a call</Link>
             </Button>

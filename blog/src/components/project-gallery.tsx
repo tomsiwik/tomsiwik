@@ -98,7 +98,7 @@ export function ProjectGallery({
               aria-label="Previous image"
               className={cn(
                 'absolute bottom-3 left-4 z-20',
-                'bg-background/80 grid size-10 place-items-center rounded-full border backdrop-blur',
+                'bg-background/80 grid size-10 place-items-center rounded-[4px] border backdrop-blur',
                 'hover:bg-background shadow-xs transition-colors',
               )}
             >
@@ -111,7 +111,7 @@ export function ProjectGallery({
               aria-label="Next image"
               className={cn(
                 'absolute right-4 bottom-3 z-20',
-                'bg-background/80 grid size-10 place-items-center rounded-full border backdrop-blur',
+                'bg-background/80 grid size-10 place-items-center rounded-[4px] border backdrop-blur',
                 'hover:bg-background shadow-xs transition-colors',
               )}
             >
@@ -151,7 +151,7 @@ export function ProjectGallery({
                   onClick={() => setActive(src)}
                   aria-pressed={selected}
                   className={cn(
-                    'bg-muted border-border relative h-[74px] w-[140px] shrink-0 overflow-hidden rounded-xl border',
+                    'bg-muted border-border relative h-[74px] w-[140px] shrink-0 overflow-hidden rounded-[4px] border',
                     'sm:h-[84px] sm:w-[160px]',
                     'transition-colors',
                     selected && 'border-hatch-cta',

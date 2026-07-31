@@ -135,7 +135,7 @@ export default function HatchSelectedProjects({
           <Button
             asChild
             variant="outline"
-            className="h-10 shrink-0 rounded-full px-5 text-sm"
+            className="h-10 shrink-0 px-5 text-sm"
           >
             <Link href="/work">
               View more <ArrowRight className="ml-1 size-4" />

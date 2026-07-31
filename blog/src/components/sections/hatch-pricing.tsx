@@ -165,7 +165,7 @@ function PricingCardView({
 
       <div className="mt-auto w-full pt-8">
         {isFeatured ? (
-          <Button asChild variant="hatch" className="h-10 w-full rounded-full">
+          <Button asChild variant="hatch" className="h-10 w-full">
             <Link href={card.ctaHref}>
               {card.ctaLabel} <ArrowRight className="ml-1 size-4" />
             </Link>
@@ -174,7 +174,7 @@ function PricingCardView({
           <Button
             asChild
             variant="outline"
-            className="h-10 w-full rounded-full"
+            className="h-10 w-full"
           >
             <Link href={card.ctaHref}>{card.ctaLabel}</Link>
           </Button>
