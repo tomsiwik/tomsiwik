@@ -234,7 +234,7 @@ export default function HatchContact({
                   <div className="flex justify-end pt-1">
                     <Button
                       type="submit"
-                      className="h-9 rounded-full px-4 text-base"
+                      className="h-9 px-4 text-base"
                     >
                       Send message
                     </Button>

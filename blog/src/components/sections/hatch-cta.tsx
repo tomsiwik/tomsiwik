@@ -41,7 +41,7 @@ export default function HatchCta({
           )}
 
           <div className={cn(!hideTitle && 'mt-8')}>
-            <Button asChild variant="hatch" className="rounded-full px-6">
+            <Button asChild variant="hatch" className="px-6">
               <Link href={ctaHref} aria-label={ctaLabel}>
                 {ctaLabel} <ArrowRight className="ml-1 size-4" />
               </Link>
