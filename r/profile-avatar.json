@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "profile-avatar",
+  "title": "Profile Avatar",
+  "description": "A compact profile avatar with an availability indicator.",
+  "files": [
+    {
+      "path": "src/components/registry/profile-avatar.tsx",
+      "content": "import type { ComponentProps } from 'react';\n\nexport function ProfileAvatar({\n  name,\n  status = 'Available for selected projects',\n  ...props\n}: ComponentProps<'img'> & { name: string; status?: string }) {\n  return (\n    <span className=\"relative inline-flex size-12 shrink-0\" title={`${name} — ${status}`}>\n      <img\n        {...props}\n        alt={props.alt ?? name}\n        className=\"size-full rounded-full border-2 border-background object-cover shadow-sm ring-1 ring-border\"\n      />\n      <span\n        aria-label={status}\n        className=\"absolute right-0 bottom-0 size-3.5 rounded-full border-2 border-background bg-emerald-500\"\n      />\n    </span>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/registry/profile-avatar.tsx"
+    }
+  ],
+  "categories": [
+    "profile"
+  ],
+  "type": "registry:component"
+}
