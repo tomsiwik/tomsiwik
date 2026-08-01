@@ -7,6 +7,7 @@ import * as React from 'react';
 
 import { Avatar } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
+import { TextReveal } from '@/components/ui/text-reveal';
 
 type HatchHeroProps = {
   title?: React.ReactNode;
@@ -33,9 +34,13 @@ export default function HatchHero({
             as a{' '}
             <span className="relative inline-block">
               developer
-              <span className="absolute -right-[80%] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[3rem] leading-none font-semibold text-primary">
-                &amp; AI engineer
-              </span>
+              <TextReveal
+                as="span"
+                text="& AI Engineer"
+                hoverText="& Vibecoder"
+                className="font-display absolute -right-[80%] -bottom-[0.15em] z-10 -rotate-3 font-semibold"
+                color="var(--primary)"
+              />
             </span>
           </h1>
           <p className="font-text text-muted-foreground mt-6 text-base leading-[140%]">
