@@ -1,5 +1,6 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from '@tanstack/react-router';
 import * as React from 'react';
+import { MotionConfig } from 'framer-motion';
 import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import { Footer } from '@/components/layout/footer';
@@ -42,13 +43,15 @@ function RootComponent() {
         <RootProvider
           theme={{ defaultTheme: 'light', enableSystem: true, disableTransitionOnChange: true }}
         >
-          <div className="flex min-h-screen flex-col">
-            <Navbar />
-            <main className="w-full flex-1">
-              <Outlet />
-            </main>
-            <Footer />
-          </div>
+          <MotionConfig reducedMotion="user">
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <main className="w-full flex-1">
+                <Outlet />
+              </main>
+              <Footer />
+            </div>
+          </MotionConfig>
         </RootProvider>
         <Scripts />
       </body>

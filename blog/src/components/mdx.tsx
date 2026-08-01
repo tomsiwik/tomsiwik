@@ -18,6 +18,7 @@ import {
   TableRow,
   type TableRowProps,
 } from '@/components/ui/table';
+import { cn } from '@/lib/utils';
 
 const LazyInteractiveExample = lazy(() => import('@/components/blog/interactive-example'));
 
@@ -29,10 +30,10 @@ function InteractiveExample(props: { initialCount?: number }) {
   );
 }
 
-function MdxTable(props: ComponentProps<typeof Table>) {
+function MdxTable({ className, ...props }: ComponentProps<typeof Table>) {
   return (
-    <div className="my-6 max-w-full overflow-x-auto rounded-[4px] border">
-      <Table {...props} />
+    <div className="mdx-table max-w-full overflow-x-auto rounded-[4px] border">
+      <Table className={cn('m-0 rounded-none', className)} {...props} />
     </div>
   );
 }

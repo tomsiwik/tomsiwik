@@ -20,6 +20,7 @@ import {
 } from 'react';
 
 import { cn } from '@/lib/utils';
+import { spring } from '@/lib/motion';
 
 interface RowRect {
   height: number;
@@ -137,8 +138,8 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
                 className="pointer-events-none absolute z-0 bg-muted"
                 initial={{ opacity: 0, ...activeRect }}
                 animate={{ opacity: 1, ...activeRect }}
-                exit={{ opacity: 0 }}
-                transition={{ type: 'spring', duration: 0.08, bounce: 0 }}
+                exit={{ opacity: 0, transition: spring.fast.exit }}
+                transition={spring.fast}
               />
             ) : null}
           </AnimatePresence>

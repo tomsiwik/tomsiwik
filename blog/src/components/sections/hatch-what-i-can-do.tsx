@@ -6,6 +6,7 @@ import Link from '@/components/link';
 
 import { PrimarySvgIcon } from '@/components/primary-svg-icon';
 import { Button } from '@/components/ui/button';
+import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 import { HatchSectionHeader } from './hatch-section-header';
@@ -72,13 +73,6 @@ const DEFAULT_SERVICES: Service[] = [
   },
 ];
 
-const rowMotion = {
-  initial: { opacity: 0, y: 14 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.25 },
-  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
-};
-
 export default function HatchWhatICanDo({
   title = 'Our services',
   description = 'End-to-end design support for founders, teams, and agencies that care about detail.',
@@ -116,10 +110,10 @@ export default function HatchWhatICanDo({
         >
           <motion.div
             className="flex flex-col gap-7"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            variants={fadeVariants}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="border-border/40 h-px w-full" />
             <ul className="flex flex-col gap-3.5 tracking-tight">
@@ -146,16 +140,13 @@ export default function HatchWhatICanDo({
           </motion.div>
 
           <div className="border-border/40 divide-border/40 flex flex-col divide-y lg:col-span-2">
-            {list.map((service, index) => (
+            {list.map((service) => (
               <motion.div
                 key={service.slug}
-                initial={rowMotion.initial}
-                whileInView={rowMotion.whileInView}
-                viewport={rowMotion.viewport}
-                transition={{
-                  ...rowMotion.transition,
-                  delay: index * 0.06,
-                }}
+                variants={fadeVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.25 }}
               >
                 <Link
                   href={`/services/${service.slug}`}

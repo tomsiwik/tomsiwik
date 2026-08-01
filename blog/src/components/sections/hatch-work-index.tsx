@@ -8,24 +8,13 @@ import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
 import type { Project } from '@/lib/content';
+import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
   projects: Project[];
   initialCount?: number;
   pageSize?: number;
-};
-
-const EASE: [number, number, number, number] = [0.22, 0.61, 0.36, 1];
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 14, filter: 'blur(4px)' },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.55, ease: EASE },
-  },
 };
 
 function ProjectCard({ p, priority }: { p: Project; priority?: boolean }) {
@@ -114,10 +103,9 @@ export default function HatchWorkIndex({
             return (
               <motion.article
                 key={p.slug}
-                variants={itemVariants}
+                variants={fadeVariants}
                 initial={isNew ? 'hidden' : false}
                 animate="show"
-                layout
               >
                 <ProjectCard p={p} priority={i < 2} />
               </motion.article>

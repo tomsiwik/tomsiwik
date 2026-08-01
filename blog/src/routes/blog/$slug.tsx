@@ -91,13 +91,13 @@ function PostContent({
           <header className="space-y-6">
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
             {description ? (
-              <p className="text-xl leading-8 text-muted-foreground">{description}</p>
+              <p className="font-display text-xl leading-8 font-semibold text-muted-foreground">{description}</p>
             ) : null}
           </header>
 
           <BlogCover title={title} description={description} coverImage={cover} className="mt-10 rounded-xl border" />
 
-          <DocsBody className="prose-headings:text-foreground prose-h2:mt-10 prose-h2:text-2xl prose-h2:font-semibold prose-h3:mt-6 prose-h3:text-xl prose-h3:font-medium prose-h4:mt-6 prose-h4:text-base prose-h4:font-medium prose-p:mt-3 prose-p:text-base prose-p:leading-7 prose-p:text-muted-foreground prose-strong:text-foreground prose-a:text-foreground hover:prose-a:text-primary prose-code:text-foreground prose-blockquote:text-muted-foreground prose-ul:mt-6 prose-ol:mt-6 prose-li:mt-3 prose-li:text-muted-foreground prose-pre:my-6 prose-pre:rounded-[4px] prose-pre:bg-muted mt-16 max-w-none min-w-0 text-foreground [&_a]:break-words [&_code]:break-words [&_pre]:max-w-full [&_pre]:overflow-x-auto">
+          <DocsBody className="article-prose prose-headings:text-foreground prose-h2:mt-10 prose-h2:text-2xl prose-h2:font-semibold prose-h3:mt-6 prose-h3:text-xl prose-h3:font-medium prose-h4:mt-6 prose-h4:text-base prose-h4:font-medium prose-p:mt-3 prose-p:text-base prose-p:leading-7 prose-p:text-muted-foreground prose-strong:text-foreground prose-a:text-foreground prose-code:text-foreground prose-blockquote:text-muted-foreground prose-ul:mt-6 prose-ol:mt-6 prose-li:mt-3 prose-li:text-muted-foreground prose-pre:my-6 prose-pre:rounded-[4px] prose-pre:bg-muted mt-16 max-w-none min-w-0 text-foreground [&_a]:break-words [&_code]:break-words [&_pre]:max-w-full [&_pre]:overflow-x-auto">
             <MDX components={useMDXComponents()} />
           </DocsBody>
 
