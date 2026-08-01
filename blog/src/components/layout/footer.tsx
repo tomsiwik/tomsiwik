@@ -22,7 +22,7 @@ export function Footer({
       <HatchRadialSvgPattern />
       <div className="relative z-10 container py-7 md:px-0">
         <div className="flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center">
-          <p className="text-muted-foreground text-sm">
+          <p className="font-jersey text-muted-foreground text-sm">
             © {new Date().getFullYear()} {name}. All rights reserved.{' '}
             <a href="https://tomhacks.com" className="hover:text-foreground underline underline-offset-4">tomhacks.com</a>
           </p>
