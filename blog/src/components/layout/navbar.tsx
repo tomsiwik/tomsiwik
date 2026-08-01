@@ -113,7 +113,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={cn(
-                    'font-jersey text-lg transition-colors',
+                    'text-base transition-colors',
                     active
                       ? 'text-foreground'
                       : 'text-muted-foreground hover:text-foreground',
@@ -216,7 +216,7 @@ export default function Navbar() {
                       key={link.label}
                       href={link.href}
                       className={cn(
-                        'font-jersey text-xl tracking-[-0.02em]',
+                        'text-lg tracking-[-0.02em]',
                         pathname === link.href
                           ? 'text-foreground'
                           : 'text-muted-foreground',
