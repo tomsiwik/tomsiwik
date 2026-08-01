@@ -123,7 +123,7 @@ export default function HatchContact({
                 >
                   Ask around
                 </a>
-                , I&apos;ve made awesome connections with good collegues
+                , I&apos;ve made awesome connections with the best collegues
               </span>
             </div>
           </div>
