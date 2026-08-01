@@ -133,7 +133,7 @@ export default function Navbar() {
                   href="https://x.com/tomhacks"
                   target="_blank"
                   rel="noreferrer"
-                  className="font-jersey block truncate text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="font-jersey block truncate text-sm text-muted-foreground/60 transition-colors hover:text-foreground"
                 >
                   x.com/tomhacks
                 </a>
