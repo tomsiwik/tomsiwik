@@ -15,7 +15,11 @@ function AboutPage() {
       <HatchAboutMe />
       <HatchMyStory />
       <HatchExperienceGrid />
-      <HatchCta />
+      <HatchCta
+        title="DMs are open!"
+        ctaHref="https://x.com/tomhacks"
+        ctaLabel="Twitter"
+      />
     </>
   );
 }
