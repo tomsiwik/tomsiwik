@@ -73,7 +73,7 @@ export default function HatchHero({
             <Button
               asChild
               variant="hatch"
-              className="w-full min-w-0 sm:w-auto sm:min-w-[160px]"
+              className="font-jersey w-full min-w-0 sm:w-auto sm:min-w-[160px]"
               aria-label={primaryCtaLabel}
             >
               <Link href={primaryCtaHref}>
@@ -84,7 +84,7 @@ export default function HatchHero({
             <Button
               asChild
               variant="outline"
-              className="hover:bg-muted w-full min-w-0 sm:w-auto sm:min-w-[160px]"
+              className="font-jersey hover:bg-muted w-full min-w-0 sm:w-auto sm:min-w-[160px]"
             >
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>

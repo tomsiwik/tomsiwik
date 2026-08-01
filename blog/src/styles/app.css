@@ -5,6 +5,7 @@
 @import '@fontsource-variable/jetbrains-mono';
 @import '@fontsource/courier-prime/latin-700.css';
 @import '@fontsource/geist-pixel/latin.css';
+@import '@fontsource/jersey-20/latin.css';
 
 @plugin '@tailwindcss/typography';
 
@@ -178,6 +179,7 @@
   --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
   --font-display-mono: 'Courier Prime', ui-monospace, monospace;
   --font-pixel: 'Geist Pixel', monospace;
+  --font-jersey: 'Jersey 20', sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
