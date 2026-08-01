@@ -5,6 +5,7 @@ import Image from '@/components/image';
 import Link from '@/components/link';
 import * as React from 'react';
 
+import { CompanyLogoMarquee } from '@/components/company-logo-marquee';
 import { Button } from '@/components/ui/button';
 import { TextReveal } from '@/components/ui/text-reveal';
 
@@ -13,20 +14,6 @@ const AVATARS = [
   '/images/avatars/avatar-2.webp',
   '/images/avatars/avatar-3.webp',
   '/images/avatars/avatar-4.webp',
-];
-
-const LOGOS = [
-  { src: '/images/logos/bmw.webp', alt: 'BMW Group', width: 123, height: 18 },
-  { src: '/images/logos/porsche.webp', alt: 'Porsche', width: 180, height: 12 },
-  { src: '/images/logos/volvo.webp', alt: 'Volvo', width: 126, height: 20 },
-  { src: '/images/logos/software-ag.webp', alt: 'Software AG', width: 113, height: 20 },
-  { src: '/images/logos/santander.webp', alt: 'Santander', width: 99, height: 20 },
-  {
-    src: '/images/logos/british-airways.webp',
-    alt: 'British Airways',
-    width: 128,
-    height: 20,
-  },
 ];
 
 type HatchHeroProps = {
@@ -123,22 +110,7 @@ export default function HatchHero({
             </div>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-4 sm:gap-x-8">
-            {LOGOS.map((logo) => (
-              <span
-                key={logo.src}
-                className="group inline-flex h-10 cursor-default items-center justify-center px-1.5"
-              >
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width}
-                  height={logo.height}
-                  className="object-contain grayscale opacity-65 transition-opacity duration-200 ease-out group-hover:opacity-90 dark:invert"
-                />
-              </span>
-            ))}
-          </div>
+          <CompanyLogoMarquee className="mt-7" />
         </div>
       </div>
     </section>

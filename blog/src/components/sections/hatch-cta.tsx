@@ -17,11 +17,11 @@ type HatchCtaProps = {
 };
 
 export default function HatchCta({
-  title = 'Design That Works\nBeautifully.',
+  title = 'I love open source, too!',
   titleClassName,
   hideTitle = false,
-  ctaHref = '/contact',
-  ctaLabel = 'Get a quote',
+  ctaHref = 'https://github.com/tomsiwik',
+  ctaLabel = 'GitHub',
 }: HatchCtaProps) {
   return (
     <section className="relative overflow-hidden">
@@ -35,7 +35,7 @@ export default function HatchCta({
           {hideTitle ? null : (
             <h2
               className={cn(
-                'font-display text-foreground text-4xl leading-[1.05] sm:text-5xl lg:text-6xl',
+                'font-display text-foreground text-2xl leading-[1.05] sm:text-3xl lg:text-[2.625rem]',
                 titleClassName,
               )}
             >
