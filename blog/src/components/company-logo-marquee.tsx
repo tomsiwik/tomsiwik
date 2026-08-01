@@ -2,7 +2,13 @@ import Image from '@/components/image';
 
 import { cn } from '@/lib/utils';
 
-const LOGOS = [
+const LOGOS: Array<{
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  className?: string;
+}> = [
   {
     src: '/images/logos/bmw-group.webp',
     alt: 'BMW Group',
@@ -19,8 +25,8 @@ const LOGOS = [
   {
     src: '/images/logos/software-ag.webp',
     alt: 'Software AG',
-    width: 124,
-    height: 22,
+    width: 136,
+    height: 24,
   },
   {
     src: '/images/logos/santander.webp',
@@ -33,6 +39,7 @@ const LOGOS = [
     alt: 'British Airways',
     width: 141,
     height: 22,
+    className: '-translate-y-0.5',
   },
   {
     src: '/images/logos/commerzbank.webp',
@@ -70,7 +77,10 @@ export function CompanyLogoMarquee({ className }: CompanyLogoMarqueeProps) {
                 alt={copy === 0 ? logo.alt : ''}
                 width={logo.width}
                 height={logo.height}
-                className="object-contain grayscale opacity-65 transition-opacity duration-200 ease-out hover:opacity-90 dark:invert"
+                className={cn(
+                  'object-contain grayscale opacity-65 transition-opacity duration-200 ease-out hover:opacity-90 dark:invert',
+                  logo.className,
+                )}
               />
             </span>
           ))}
