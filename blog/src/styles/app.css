@@ -2,6 +2,7 @@
 @import 'tw-animate-css';
 @import 'fumadocs-ui/css/shadcn.css';
 @import 'fumadocs-ui/css/preset.css';
+@import '@fontsource-variable/geist-mono';
 @import '@fontsource/courier-prime/latin-700.css';
 @import '@fontsource/geist-pixel/latin.css';
 
@@ -174,7 +175,8 @@
   --font-text: var(--font-inter);
   --font-sans: var(--font-text);
   --font-serif: var(--font-display);
-  --font-mono: 'Courier Prime', ui-monospace, monospace;
+  --font-mono: 'Geist Mono Variable', ui-monospace, monospace;
+  --font-display-mono: 'Courier Prime', ui-monospace, monospace;
   --font-pixel: 'Geist Pixel', monospace;
 
   --color-background: var(--background);
