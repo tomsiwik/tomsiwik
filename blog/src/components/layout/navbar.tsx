@@ -104,6 +104,13 @@ export default function Navbar() {
               className="dark:invert"
               priority
             />
+            <Image
+              src="/images/brand/tomhacks-matrix-logo.svg"
+              alt=""
+              width={55}
+              height={20}
+              priority
+            />
           </Link>
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
