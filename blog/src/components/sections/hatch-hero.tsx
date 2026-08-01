@@ -21,7 +21,7 @@ export default function HatchHero({
   primaryCtaHref = '/contact',
   primaryCtaLabel = 'Working on',
   secondaryCtaHref = '/contact',
-  secondaryCtaLabel = 'Build',
+  secondaryCtaLabel = 'Shipped',
 }: HatchHeroProps) {
   return (
     <section className="bg-background relative overflow-hidden">
@@ -33,8 +33,8 @@ export default function HatchHero({
             as a{' '}
             <span className="relative inline-block">
               developer
-              <span className="absolute -right-[0.35em] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[0.5em] leading-none font-semibold text-primary">
-                AI engineer
+              <span className="absolute -right-[80%] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[3rem] leading-none font-semibold text-primary">
+                &amp; AI engineer
               </span>
             </span>
           </h1>
