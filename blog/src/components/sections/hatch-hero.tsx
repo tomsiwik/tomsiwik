@@ -112,7 +112,7 @@ export default function HatchHero({
                   href="https://www.linkedin.com/in/tomas-sivicki/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary-hover font-medium transition-colors"
+                  className="text-foreground font-bold underline underline-offset-4"
                 >
                   ask around
                 </a>
