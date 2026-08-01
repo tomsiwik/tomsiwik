@@ -1,10 +1,8 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { RssIcon } from 'lucide-react';
 
 import { PostCard } from '@/components/blog/post-card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { loadPosts } from '@/lib/blog.functions';
 import { withBasePath } from '@/lib/paths';
 
@@ -33,18 +31,11 @@ function BlogIndex() {
   return (
     <main className="container space-y-10 py-8 md:py-16">
       <section>
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
-          <h1 className="text-3xl leading-tight font-bold sm:text-4xl">Ideas for better digital products</h1>
-          <p className="text-xl text-muted-foreground">Notes on design, development, accessibility, and the small details that make software feel considered.</p>
-          <form className="w-full max-w-sm gap-3 pt-1 max-sm:space-y-2 sm:flex" onSubmit={(event) => event.preventDefault()}>
-            <Input type="email" aria-label="Email address" placeholder="you@example.com" />
-            <Button type="submit" className="max-sm:w-full">Subscribe</Button>
-          </form>
-          <nav className="flex flex-wrap justify-center gap-4 pt-2 text-sm" aria-label="Blog">
-            <Link to="/blog/posts" className="underline underline-offset-4">All posts</Link>
-            <Link to="/blog/categories" className="underline underline-offset-4">Categories</Link>
-            <Link to="/blog/tags" className="underline underline-offset-4">Tags</Link>
-          </nav>
+        <div className="mx-auto max-w-3xl space-y-4 text-center">
+          <h1 className="text-3xl leading-tight font-bold sm:text-4xl">Blog</h1>
+          <p className="text-muted-foreground text-xl">
+            Notes on design, development, accessibility, and the small details that make software feel considered.
+          </p>
         </div>
       </section>
 
@@ -70,7 +61,6 @@ function BlogIndex() {
           <div className="grid gap-6 sm:grid-cols-2">
             {posts.slice(4).map((post) => <PostCard key={post.path} post={post} />)}
           </div>
-          <div className="flex justify-end"><Button variant="outline" asChild><Link to="/blog/posts">All posts</Link></Button></div>
         </section>
       ) : null}
 
