@@ -109,16 +109,15 @@ export default function HatchHero({
                 ))}
               </div>
               <span>
-                I&apos;ve made awesome{' '}
                 <a
                   href="https://www.linkedin.com/in/tomas-sivicki/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground decoration-border font-bold underline decoration-dotted underline-offset-4"
                 >
-                  connections with people
+                  Ask around
                 </a>
-                {' '}everywhere
+                , I&apos;ve made awesome connections with good collegues
               </span>
             </div>
           </div>
