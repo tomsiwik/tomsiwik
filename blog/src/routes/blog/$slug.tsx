@@ -1,16 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { DocsBody } from 'fumadocs-ui/layouts/docs/page';
-import { ArrowLeftIcon, ChevronRightIcon, TextIcon } from 'lucide-react';
+import { ArrowLeftIcon, ChevronRightIcon } from 'lucide-react';
 import { Suspense, use } from 'react';
 
 import { BlogCover } from '@/components/blog/blog-cover';
 import { PostCard } from '@/components/blog/post-card';
-import { AuthorCard } from '@/components/registry/author-card';
 import { Button } from '@/components/ui/button';
 import { useMDXComponents } from '@/components/mdx';
 import { blog } from '@/lib/blog';
 import { loadPost } from '@/lib/blog.functions';
-import { withBasePath } from '@/lib/paths';
 
 export const Route = createFileRoute('/blog/$slug')({
   loader: async ({ params }) => {
@@ -63,7 +61,6 @@ function BlogPost() {
 }
 
 function PostContent({
-  author,
   cover,
   description,
   path,
@@ -73,7 +70,7 @@ function PostContent({
   const page = blog.getPage(path);
   if (!page) throw new Error(`Unknown blog page: ${path}`);
 
-  const { toc } = use(page.load());
+  use(page.load());
   const MDX = page.body;
 
   return (
@@ -86,50 +83,24 @@ function PostContent({
         <span className="truncate text-foreground">{title}</span>
       </nav>
 
-      <div className="relative mt-10">
-        <article className="min-w-0">
-          <header className="space-y-6">
-            <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
-            {description ? (
-              <p className="font-display text-xl leading-8 font-semibold text-muted-foreground">{description}</p>
-            ) : null}
-          </header>
+      <article className="mt-10 min-w-0">
+        <header className="space-y-6">
+          <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
+          {description ? (
+            <p className="font-display text-xl leading-8 font-semibold text-muted-foreground">{description}</p>
+          ) : null}
+        </header>
 
-          <BlogCover title={title} description={description} coverImage={cover} className="mt-10 rounded-xl border" />
+        <BlogCover title={title} description={description} coverImage={cover} className="mt-10 rounded-xl border" />
 
-          <DocsBody className="article-prose prose-headings:text-foreground prose-h2:mt-10 prose-h2:text-2xl prose-h2:font-semibold prose-h3:mt-6 prose-h3:text-xl prose-h3:font-medium prose-h4:mt-6 prose-h4:text-base prose-h4:font-medium prose-p:mt-3 prose-p:text-base prose-p:leading-7 prose-p:text-muted-foreground prose-strong:text-foreground prose-a:text-foreground prose-code:text-foreground prose-blockquote:text-muted-foreground prose-ul:mt-6 prose-ol:mt-6 prose-li:mt-3 prose-li:text-muted-foreground prose-pre:my-6 prose-pre:rounded-[4px] prose-pre:bg-muted mt-16 max-w-none min-w-0 text-foreground [&_a]:break-words [&_code]:break-words [&_pre]:max-w-full [&_pre]:overflow-x-auto">
-            <MDX components={useMDXComponents()} />
-          </DocsBody>
+        <DocsBody className="article-prose prose-headings:text-foreground prose-h2:mt-10 prose-h2:text-2xl prose-h2:font-semibold prose-h3:mt-6 prose-h3:text-xl prose-h3:font-medium prose-h4:mt-6 prose-h4:text-base prose-h4:font-medium prose-p:mt-3 prose-p:text-base prose-p:leading-7 prose-p:text-muted-foreground prose-strong:text-foreground prose-a:text-foreground prose-code:text-foreground prose-blockquote:text-muted-foreground prose-ul:mt-6 prose-ol:mt-6 prose-li:mt-3 prose-li:text-muted-foreground prose-pre:my-6 prose-pre:rounded-[4px] prose-pre:bg-muted mt-16 max-w-none min-w-0 text-foreground [&_a]:break-words [&_code]:break-words [&_pre]:max-w-full [&_pre]:overflow-x-auto">
+          <MDX components={useMDXComponents()} />
+        </DocsBody>
 
-          <div className="mt-16">
-            <Button variant="outline" asChild><Link to="/blog/posts" className="flex items-center gap-2"><ArrowLeftIcon className="size-4" />Back to posts</Link></Button>
-          </div>
-        </article>
-
-        <aside className="absolute inset-y-0 left-full ml-8 hidden w-56 min-[1680px]:block">
-          <div className="sticky top-20 space-y-10">
-            <AuthorCard name={author} role="Author · tomhacks.com" avatarUrl={withBasePath('/images/brand/tom-siwik.jpg')} website="https://tomhacks.com" />
-            {toc.length > 0 ? (
-              <nav aria-label="Table of contents">
-                <h2 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground"><TextIcon className="size-4" />Table of contents</h2>
-                <div className="relative mt-4 flex flex-col">
-                  <div className="absolute inset-y-0 left-0 w-px bg-border" />
-                  {toc.map((item) => (
-                    <a
-                      key={item.url}
-                      href={item.url}
-                      className="relative py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                      style={{ paddingInlineStart: item.depth <= 2 ? 12 : item.depth === 3 ? 24 : 32 }}
-                    >
-                      {item.title}
-                    </a>
-                  ))}
-                </div>
-              </nav>
-            ) : null}
-          </div>
-        </aside>
-      </div>
+        <div className="mt-16">
+          <Button variant="outline" asChild><Link to="/blog/posts" className="flex items-center gap-2"><ArrowLeftIcon className="size-4" />Back to posts</Link></Button>
+        </div>
+      </article>
 
       {related.length > 0 ? (
         <section className="mt-24 space-y-12">

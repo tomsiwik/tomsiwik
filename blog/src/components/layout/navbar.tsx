@@ -1,15 +1,13 @@
 'use client';
 
-import { ArrowRight } from 'lucide-react';
 import Image from '@/components/image';
 import Link from '@/components/link';
 import { useLocation } from '@tanstack/react-router';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
-import { Button } from '@/components/ui/button';
+import { ProfileAvatar } from '@/components/registry/profile-avatar';
+import { withBasePath } from '@/lib/paths';
 import { cn } from '@/lib/utils';
-
-import { ThemeToggle } from '../ui/theme-toggle';
 
 const HEADER_HEIGHT = 80;
 
@@ -129,25 +127,23 @@ export default function Navbar() {
             })}
           </nav>
 
-          <div className="flex min-w-0 items-center justify-end gap-2 sm:gap-3">
-            <div className="hidden lg:block">
-              <ThemeToggle />
-            </div>
-            <Button
-              asChild
-              variant="outline"
-              className={cn(
-                'hover:bg-muted h-10 shrink px-3 text-sm shadow-xs sm:px-4',
-                'max-w-[min(50vw,11rem)] sm:max-w-[50vw]',
-              )}
-            >
-              <Link href="/contact" className="truncate">
-                <span className="truncate">Book a call</span>
-                <ArrowRight className="ml-1 size-4 shrink-0" />
-              </Link>
-            </Button>
-            <div className="shrink-0 lg:hidden">
-              <ThemeToggle />
+          <div className="flex min-w-0 items-center justify-end gap-3">
+            <div className="flex min-w-0 items-center gap-3">
+              <ProfileAvatar
+                src={withBasePath('/images/brand/tom-siwik.jpg')}
+                name="Tom Siwik"
+              />
+              <span className="min-w-0">
+                <span className="block truncate text-sm font-semibold">Tom Siwik</span>
+                <a
+                  href="https://x.com/tomhacks"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block truncate text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  x.com/tomhacks
+                </a>
+              </span>
             </div>
             <button
               type="button"

@@ -2,6 +2,7 @@ import Image from '@/components/image';
 import Link from '@/components/link';
 
 import { HatchRadialSvgPattern } from '@/components/hatch-radial-svg-pattern';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 
 type FooterProps = {
   name?: string;
@@ -46,6 +47,7 @@ export function Footer({
                 />
               </Link>
             ))}
+            <ThemeToggle />
           </div>
         </div>
       </div>
