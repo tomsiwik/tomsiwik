@@ -91,7 +91,7 @@ export default function HatchHero({
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>
           </div>
-          <div className="mt-10 flex max-w-full">
+          <div className="mt-14 flex max-w-full">
             <div className="bg-muted text-muted-foreground flex max-w-full flex-wrap items-center gap-3 rounded-full px-3 py-2 text-sm sm:px-4">
               <div className="flex shrink-0 -space-x-2">
                 {AVATARS.map((src, index) => (
