@@ -7,6 +7,8 @@ import React, {
   type ElementType,
 } from 'react';
 
+import { cn } from '@/lib/utils';
+
 export interface TextRevealProps {
   text: string;
   hoverText?: string;
@@ -36,6 +38,8 @@ function segment(text: string) {
   return [...text];
 }
 
+const hiddenRowOffset = 1.35;
+
 const TextReveal = React.memo(function TextReveal({
   text,
   hoverText = text,
@@ -61,7 +65,10 @@ const TextReveal = React.memo(function TextReveal({
   const sign = direction === 'up' ? 1 : -1;
 
   const rootProps: Record<string, unknown> = {
-    className: `relative inline-block cursor-pointer select-none overflow-hidden whitespace-nowrap no-underline ${className}`.trim(),
+    className: cn(
+      'relative inline-block cursor-pointer select-none overflow-hidden whitespace-nowrap no-underline',
+      className,
+    ),
     style: {
       fontSize,
       color: hovered ? hoverColor : color,
@@ -88,7 +95,7 @@ const TextReveal = React.memo(function TextReveal({
 
   const rowStyle: CSSProperties = {
     gridArea: '1 / 1',
-    height: '1em',
+    height: '1.12em',
   };
 
   return (
@@ -103,7 +110,7 @@ const TextReveal = React.memo(function TextReveal({
                 transition: `transform ${duration}ms ${easing}`,
                 transitionDelay: `${index * staggerDelay}ms`,
                 transform: hovered
-                  ? `translateY(${-sign}em)`
+                  ? `translateY(${-sign * hiddenRowOffset}em)`
                   : 'translateY(0)',
               }}
             >
@@ -121,7 +128,7 @@ const TextReveal = React.memo(function TextReveal({
                 transitionDelay: `${index * staggerDelay}ms`,
                 transform: hovered
                   ? 'translateY(0)'
-                  : `translateY(${sign}em)`,
+                  : `translateY(${sign * hiddenRowOffset}em)`,
               }}
             >
               {char === ' ' ? '\u00A0' : char}
