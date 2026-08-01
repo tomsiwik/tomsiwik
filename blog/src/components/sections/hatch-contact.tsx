@@ -31,6 +31,8 @@ const AVATARS = [
   '/images/avatars/avatar-2.webp',
   '/images/avatars/avatar-3.webp',
   '/images/avatars/avatar-4.webp',
+  '/images/avatars/avatar-5.webp',
+  '/images/avatars/avatar-6.webp',
 ];
 
 function FieldLabel({
@@ -118,7 +120,7 @@ export default function HatchContact({
                   href="https://www.linkedin.com/in/tomas-sivicki/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-foreground font-bold underline underline-offset-4"
+                  className="text-foreground decoration-border font-bold underline decoration-dotted underline-offset-4"
                 >
                   ask around
                 </a>
