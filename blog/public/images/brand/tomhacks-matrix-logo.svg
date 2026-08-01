@@ -2,9 +2,11 @@
   <style>
     .r { fill: #c30047; }
     .w { fill: #fff; }
+    .b { fill: #00c7f6; }
     @media (prefers-color-scheme: light) {
-      .r { fill: #c30047; }
-      .w { fill: #d4d4d4; }
+      .r { fill: #d4d4d4; }
+      .w { fill: #c30047; }
+      .b { fill: #d4d4d4; }
     }
   </style>
 
@@ -46,7 +48,7 @@
     <rect x="100" y="30" width="10" height="10" />
   </g>
 
-  <g fill="#00c7f6">
+  <g class="b">
     <rect x="10" y="30" width="10" height="10" />
     <rect x="50" y="30" width="10" height="10" />
     <rect x="90" y="30" width="10" height="10" />
