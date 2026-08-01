@@ -27,6 +27,7 @@ const LOGOS: Array<{
     alt: 'Software AG',
     width: 136,
     height: 24,
+    className: '-translate-y-0.5',
   },
   {
     src: '/images/logos/santander.webp',
@@ -39,7 +40,7 @@ const LOGOS: Array<{
     alt: 'British Airways',
     width: 141,
     height: 22,
-    className: '-translate-y-0.5',
+    className: '-translate-y-1',
   },
   {
     src: '/images/logos/commerzbank.webp',
