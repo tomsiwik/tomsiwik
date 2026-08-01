@@ -52,7 +52,7 @@ const DEFAULT_ITEMS: StoryItem[] = [
 function StoryCard({ item }: { item: StoryItem }) {
   return (
     <article className="bg-muted/30 h-full rounded-[18px] p-6 sm:p-7">
-      <div className="text-[10px] font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">
+      <div className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">
         {item.range}
       </div>
       <h3 className="font-body mt-4 text-xl font-semibold tracking-tight whitespace-pre-line">
