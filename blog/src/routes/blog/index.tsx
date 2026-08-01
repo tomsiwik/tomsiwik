@@ -50,7 +50,7 @@ function BlogIndex() {
       {posts.length > 4 ? (
         <section className="space-y-16 border-t pt-16">
           <div className="space-y-2.5">
-            <div className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Thoughts</div>
+            <div className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">THOUGHTS</div>
             <div className="flex justify-between gap-4 max-md:flex-col">
               <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">More notes from the workbench</h2>
               <p className="max-w-xl text-lg text-muted-foreground">Practical observations, working examples, and lessons gathered while making things for the web.</p>

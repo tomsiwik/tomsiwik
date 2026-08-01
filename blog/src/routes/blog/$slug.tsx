@@ -105,7 +105,7 @@ function PostContent({
       {related.length > 0 ? (
         <section className="mt-24 space-y-12">
           <div className="space-y-2.5">
-            <span className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Keep reading</span>
+            <span className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">KEEP READING</span>
             <div className="flex justify-between gap-4 max-md:flex-col">
               <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">More writing</h2>
               <p className="max-w-xl text-lg text-muted-foreground">Two more notes about making useful, resilient products for the web.</p>
