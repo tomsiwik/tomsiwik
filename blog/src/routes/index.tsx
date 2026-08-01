@@ -33,7 +33,12 @@ function Home() {
           </div>
         </div>
       </section>
-      <HatchCta />
+      <HatchCta
+        title="Want to read more?"
+        titleClassName="text-3xl sm:text-4xl lg:text-5xl"
+        ctaHref="/blog"
+        ctaLabel="Read the blog"
+      />
     </>
   );
 }

@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 
 type HatchCtaProps = {
   title?: string;
+  titleClassName?: string;
   /** Hide headline; button only (e.g. minimal homepage). */
   hideTitle?: boolean;
   ctaHref?: string;
@@ -17,6 +18,7 @@ type HatchCtaProps = {
 
 export default function HatchCta({
   title = 'Design That Works\nBeautifully.',
+  titleClassName,
   hideTitle = false,
   ctaHref = '/contact',
   ctaLabel = 'Get a quote',
@@ -31,7 +33,12 @@ export default function HatchCta({
       <div className="section-padding relative z-10 container">
         <div className="relative mx-auto flex w-full flex-col items-center px-6 py-12 text-center sm:px-10 sm:py-14">
           {hideTitle ? null : (
-            <h2 className="font-display text-foreground text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
+            <h2
+              className={cn(
+                'font-display text-foreground text-4xl leading-[1.05] sm:text-5xl lg:text-6xl',
+                titleClassName,
+              )}
+            >
               {title.split('\n').map((line, i) => (
                 <span key={i} className="block">
                   {line}
