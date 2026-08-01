@@ -1,79 +1,67 @@
 'use client';
 
-import { ArrowRight, Check } from 'lucide-react';
-import Link from '@/components/link';
+import { Check } from 'lucide-react';
+import Image from '@/components/image';
 
-import { PrimarySvgIcon } from '@/components/primary-svg-icon';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
-type Service = {
-  slug: string;
+type Project = {
+  href: string;
   title: string;
   description: string;
   features: string[];
   iconSrc: string;
+  invertInDark?: boolean;
 };
 
-const SERVICES: Service[] = [
+const PROJECTS: Project[] = [
   {
-    slug: 'web-design-ux',
-    title: 'Web Design & UX',
-    iconSrc: '/images/services/noun-half-circles-7745954.svg',
-    description:
-      'Custom website design and UX strategy that drives conversions. From strategy to pixel-perfect handoff, I create digital experiences that feel effortless.',
-    features: [
-      'Information Architecture',
-      'Wireframing & Prototyping',
-      'Responsive Design',
-      'Developer Handoff',
-    ],
+    href: 'https://epicat.com',
+    title: 'epicat.com',
+    iconSrc: '/images/projects/epicat.svg',
+    description: 'No-code agentic team builder.',
+    features: ['AI agent teams', 'A2A protocol', 'Cloudflare Workers', 'TypeScript'],
+    invertInDark: true,
   },
   {
-    slug: 'brand-design',
-    title: 'Brand Design',
-    iconSrc: '/images/services/noun-sparkle-7746005.svg',
-    description:
-      'Complete visual identity systems that make your brand memorable. Logo design, color palettes, typography, and standards that scale.',
-    features: [
-      'Logo Design',
-      'Brand Guidelines',
-      'Visual Systems',
-      'Marketing Collateral',
-    ],
+    href: 'https://papercat.app',
+    title: 'papercat.app',
+    iconSrc: '/images/projects/papercat.svg',
+    description: 'Make your work environment great again.',
+    features: ['Remote team games', 'Ice breakers', 'Team activities', 'Browser-based'],
+    invertInDark: true,
   },
   {
-    slug: 'product-design',
-    title: 'Product Design',
-    iconSrc: '/images/services/noun-semicircles-8294628.svg',
-    description:
-      'End-to-end product design from concept to launch. I work closely with your team to design intuitive interfaces users will love.',
-    features: [
-      'Product Strategy',
-      'User Research',
-      'Interface Design',
-      'Interaction Design',
-    ],
+    href: 'https://dojocho.ai',
+    title: 'dojocho.ai',
+    iconSrc: '/images/projects/dojocho.svg',
+    description: 'Installable coding practices (katas).',
+    features: ['AI pairing', 'Coding katas', 'Installable packs', 'MIT licensed'],
   },
   {
-    slug: 'framer-development',
-    title: 'Framer Development',
-    iconSrc: '/images/services/noun-star-7745963.svg',
-    description:
-      'Interactive websites and prototypes built fast without compromising quality. Hand-coded designs that are pixel-perfect and performant.',
-    features: [
-      'Framer Development',
-      'Webflow Sites',
-      'Interactive Prototypes',
-      'Custom Animations',
-    ],
+    href: 'https://godmode.so',
+    title: 'godmode.so',
+    iconSrc: '/images/projects/godmode.svg',
+    description: 'Agentic sandboxed Swiss army knife.',
+    features: ['Command line', 'MCP', 'OpenAPI', 'MIT licensed'],
+    invertInDark: true,
+  },
+  {
+    href: 'https://nerdbooks.net',
+    title: 'nerdbooks.net',
+    iconSrc: '/images/projects/nerdbooks.svg',
+    description: "Find the books you didn't know you needed.",
+    features: ['Book discovery', 'Independent project', 'Open source', 'Beta'],
+    invertInDark: true,
   },
 ];
 
-function ServiceCard({ service }: { service: Service }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/services/${service.slug}`}
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noreferrer"
       className={cn(
         'group flex flex-col rounded-2xl px-2 py-6 text-left outline-none sm:px-4 sm:py-8',
         'hover:bg-muted/50 transition-colors',
@@ -89,27 +77,36 @@ function ServiceCard({ service }: { service: Service }) {
           )}
           aria-hidden
         >
-          <PrimarySvgIcon src={service.iconSrc} className="size-9 sm:size-10" />
+          <Image
+            src={project.iconSrc}
+            alt=""
+            width={48}
+            height={48}
+            className={cn(
+              'size-11 object-contain',
+              project.invertInDark && 'dark:invert',
+            )}
+          />
         </div>
       </div>
       <h3 className="font-body text-xl font-semibold tracking-tight">
-        {service.title}
+        {project.title}
       </h3>
       <p className="text-muted-foreground mt-3 text-sm leading-[1.6]">
-        {service.description}
+        {project.description}
       </p>
       <ul className="mt-6 w-full space-y-3">
-        {service.features.map((f) => (
+        {project.features.map((feature) => (
           <li
-            key={f}
+            key={feature}
             className="text-muted-foreground flex items-start gap-2.5 text-sm"
           >
             <Check className="text-hatch-cta mt-0.5 size-4 shrink-0" />
-            <span className="min-w-0 leading-snug">{f}</span>
+            <span className="min-w-0 leading-snug">{feature}</span>
           </li>
         ))}
       </ul>
-    </Link>
+    </a>
   );
 }
 
@@ -119,37 +116,17 @@ export default function ServicesHero() {
       <div className="section-padding relative container">
         <div className="mx-auto flex w-full flex-col items-start text-start">
           <h1 className="font-display text-3xl leading-[1.1] sm:text-4xl lg:text-5xl">
-            Design services for startups
+            Open-source projects
             <br />
-            ready to scale.
+            we&apos;re working on.
           </h1>
           <p className="text-muted-foreground mt-4 max-w-2xl text-base leading-[1.6]">
-            Each service is designed to solve specific problems. Whether you
-            need a full rebrand, a new website, or a design system — I&apos;ve
-            got you covered.
+            Tools, experiments, and products we&apos;re building in the open.
           </p>
-          <div className="mt-7 flex w-full max-w-md flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-start">
-            <Button
-              asChild
-              variant="hatch"
-              className="h-10 w-full justify-center px-5 sm:w-auto sm:min-w-[140px]"
-            >
-              <Link href="/contact">
-                Get a quote <ArrowRight className="ml-1 size-4" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-10 w-full justify-center px-5 sm:w-auto sm:min-w-[140px]"
-            >
-              <Link href="/contact">Book a call</Link>
-            </Button>
-          </div>
         </div>
         <div className="mx-auto mt-14 grid w-full items-stretch gap-6 sm:grid-cols-2 lg:mt-16">
-          {SERVICES.map((s) => (
-            <ServiceCard key={s.title} service={s} />
+          {PROJECTS.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
       </div>
