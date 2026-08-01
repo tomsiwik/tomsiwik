@@ -66,7 +66,7 @@ function BlogIndex() {
 
       <section className="flex flex-col items-center gap-6 py-8 text-center">
         <RssIcon className="size-12" aria-hidden="true" />
-        <h2 className="max-w-md text-2xl font-semibold sm:text-3xl lg:text-4xl">Follow new writing in your feed reader</h2>
+        <h2 className="max-w-md text-2xl font-semibold sm:text-3xl lg:text-4xl">Still using a feed reader?</h2>
         <a href={withBasePath('/blog/feed.xml')} className="max-w-full overflow-x-auto font-mono text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">tomhacks.com/blog/feed.xml</a>
       </section>
     </main>
