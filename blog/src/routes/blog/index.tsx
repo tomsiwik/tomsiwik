@@ -31,7 +31,7 @@ function BlogIndex() {
   const posts = Route.useLoaderData();
 
   return (
-    <main className="mx-auto w-full max-w-7xl space-y-10 px-4 py-8 md:px-6 md:py-16">
+    <main className="container space-y-10 py-8 md:py-16">
       <section>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
           <h1 className="text-3xl leading-tight font-bold sm:text-4xl">Ideas for better digital products</h1>
