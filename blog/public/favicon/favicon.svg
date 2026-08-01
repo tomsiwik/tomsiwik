@@ -1,10 +1,14 @@
 <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
   <style>
+    .r { fill: #c30047; }
     .h { fill: #fff; }
-    @media (prefers-color-scheme: light) { .h { fill: #17181c; } }
+    @media (prefers-color-scheme: light) {
+      .r { fill: oklch(0.56 0.23 13.19); }
+      .h { fill: #17181c; }
+    }
   </style>
   <g transform="translate(5)">
-    <path fill="#c30047" d="M0 0h10v10H0zM10 0h10v10H10zM20 0h10v10H20zM10 10h10v10H10z"/>
+    <path class="r" d="M0 0h10v10H0zM10 0h10v10H10zM20 0h10v10H20zM10 10h10v10H10z"/>
     <path class="h" d="M0 10h10v10H0zM20 10h10v10H20zM0 20h10v10H0zM10 20h10v10H10zM20 20h10v10H20zM0 30h10v10H0zM20 30h10v10H20z"/>
     <path fill="#00c7f6" d="M10 30h10v10H10z"/>
   </g>

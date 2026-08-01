@@ -2,6 +2,7 @@
   <style>
     :root {
       --logo-primary: oklch(0.52 0.21 12.29);
+      --logo-primary-light: oklch(0.56 0.23 13.19);
       --logo-teal: #00c7f6;
     }
     .r { fill: var(--logo-primary); }
@@ -9,7 +10,7 @@
     .b { fill: var(--logo-teal); }
     @media (prefers-color-scheme: light) {
       .r { fill: oklch(0.9 0 0); }
-      .w { fill: oklch(from var(--logo-primary) calc(l + 0.15) calc(c + 0.03) h); }
+      .w { fill: var(--logo-primary-light); }
       .b { fill: oklch(from var(--logo-teal) calc(l + 0.10) calc(c - 0.03) h); }
     }
   </style>
