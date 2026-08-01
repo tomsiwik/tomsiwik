@@ -55,7 +55,9 @@ export default function HatchHero({
                 hoverText="$ Vibecoder"
                 textClassName="font-mono font-bold"
                 hoverTextClassName="font-pixel font-normal"
-                className="font-display absolute left-full -bottom-[0.15em] z-10 -rotate-3 font-semibold"
+                fontSize="3.25rem"
+                className="font-display absolute left-full -bottom-[0.15em] z-10 font-semibold"
+                style={{ transform: 'rotate(-2deg)' }}
                 color="var(--primary)"
               />
             </span>
@@ -91,7 +93,7 @@ export default function HatchHero({
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>
           </div>
-          <div className="mt-14 flex max-w-full">
+          <div className="mt-16 flex max-w-full">
             <div className="bg-muted text-muted-foreground flex max-w-full flex-wrap items-center gap-3 rounded-full px-3 py-2 text-sm sm:px-4">
               <div className="flex shrink-0 -space-x-2">
                 {AVATARS.map((src, index) => (
