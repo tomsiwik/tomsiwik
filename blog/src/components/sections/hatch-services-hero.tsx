@@ -29,7 +29,6 @@ const PROJECTS: Project[] = [
     iconSrc: '/images/projects/papercat.svg',
     description: 'Make your work environment great again.',
     features: ['Remote team games', 'Ice breakers', 'Team activities', 'Browser-based'],
-    invertInDark: true,
   },
   {
     href: 'https://dojocho.ai',
@@ -68,26 +67,17 @@ function ProjectCard({ project }: { project: Project }) {
         'focus-visible:ring-ring focus-visible:ring-offset-background focus-visible:ring-2 focus-visible:ring-offset-2',
       )}
     >
-      <div className="mb-5 flex items-center justify-start">
-        <div
+      <div className="mb-5 flex h-20 items-center justify-start" aria-hidden>
+        <Image
+          src={project.iconSrc}
+          alt=""
+          width={48}
+          height={48}
           className={cn(
-            'inline-flex size-20 shrink-0 items-center justify-center rounded-full',
-            'border-border bg-background border p-2 shadow-xs',
-            'transition-colors',
+            'size-12 object-contain',
+            project.invertInDark && 'dark:invert',
           )}
-          aria-hidden
-        >
-          <Image
-            src={project.iconSrc}
-            alt=""
-            width={48}
-            height={48}
-            className={cn(
-              'size-11 object-contain',
-              project.invertInDark && 'dark:invert',
-            )}
-          />
-        </div>
+        />
       </div>
       <h3 className="font-body text-xl font-semibold tracking-tight">
         {project.title}
