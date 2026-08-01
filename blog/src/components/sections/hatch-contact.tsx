@@ -115,14 +115,14 @@ export default function HatchContact({
                 ))}
               </div>
               <span>
-                I&apos;ve made awesome connections{' '}
+                I&apos;ve made awesome{' '}
                 <a
                   href="https://www.linkedin.com/in/tomas-sivicki/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-foreground decoration-border font-bold underline decoration-dotted underline-offset-4"
                 >
-                  w/ people
+                  connections with people
                 </a>
                 {' '}everywhere
               </span>
