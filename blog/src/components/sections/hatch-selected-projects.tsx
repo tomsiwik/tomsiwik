@@ -15,6 +15,8 @@ import { HatchSectionHeader } from './hatch-section-header';
 type Props = {
   projects: Project[];
   limit?: number;
+  title?: string;
+  description?: string;
   /** Hide section title + description (e.g. minimal homepage). */
   hideHeader?: boolean;
 };
@@ -22,6 +24,8 @@ type Props = {
 export default function HatchSelectedProjects({
   projects,
   limit,
+  title = 'Selected Projects',
+  description = 'A few recent collaborations that show how good design drives clarity and results.',
   hideHeader = false,
 }: Props) {
   const featured = projects.filter((p) => p.featured);
@@ -37,8 +41,8 @@ export default function HatchSelectedProjects({
       >
         {hideHeader ? null : (
           <HatchSectionHeader
-            title="Selected Projects"
-            description="A few recent collaborations that show how good design drives clarity and results."
+            title={title}
+            description={description}
             descriptionClassName="text-end"
           />
         )}
