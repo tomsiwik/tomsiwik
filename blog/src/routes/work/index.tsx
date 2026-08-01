@@ -15,7 +15,11 @@ function WorkPage() {
   return (
     <main className="bg-background">
       <HatchWorkIndex projects={projects} initialCount={6} pageSize={6} />
-      <HatchCta />
+      <HatchCta
+        title="LinkedIn CV"
+        ctaHref="https://www.linkedin.com/in/tomas-sivicki/"
+        ctaLabel="LinkedIn"
+      />
     </main>
   );
 }
