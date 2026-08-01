@@ -71,8 +71,9 @@ export default function HatchHero({
             <span className="text-foreground decoration-border font-medium underline decoration-dotted underline-offset-4">
               platforms and software
             </span>
+            {'.'}
             <br />
-            {'check it out:'}
+            {'Check it out:'}
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-start gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Button
