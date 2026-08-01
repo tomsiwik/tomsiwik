@@ -28,6 +28,11 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        href: withBasePath('/favicon/favicon.svg'),
+      },
       { rel: 'icon', href: withBasePath('/favicon/favicon.ico') },
     ],
   }),
