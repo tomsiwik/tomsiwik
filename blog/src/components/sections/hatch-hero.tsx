@@ -38,7 +38,7 @@ export default function HatchHero({
                 as="span"
                 text="& AI Engineer"
                 hoverText="& Vibecoder"
-                className="font-display absolute -right-[80%] -bottom-[0.15em] z-10 -rotate-3 font-semibold"
+                className="font-display absolute left-full -bottom-[0.15em] z-10 -rotate-3 font-semibold"
                 color="var(--primary)"
               />
             </span>
