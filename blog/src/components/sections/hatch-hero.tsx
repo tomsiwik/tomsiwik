@@ -106,7 +106,17 @@ export default function HatchHero({
                   </div>
                 ))}
               </div>
-              <span>The work that’s trusted by teams and founders</span>
+              <span>
+                I&apos;ve made connections everywhere,{' '}
+                <a
+                  href="https://www.linkedin.com/in/tomas-sivicki/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-hover font-medium transition-colors"
+                >
+                  ask around
+                </a>
+              </span>
             </div>
           </div>
 
