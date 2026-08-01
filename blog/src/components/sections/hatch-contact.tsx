@@ -33,12 +33,17 @@ const AVATARS = [
 ];
 
 const LOGOS = [
-  { src: '/images/logos/Frame.webp', alt: 'Flickr' },
-  { src: '/images/logos/Frame-1.webp', alt: 'Intel' },
-  { src: '/images/logos/Frame-2.webp', alt: 'Gravatar' },
-  { src: '/images/logos/Frame-3.webp', alt: 'Appcircle' },
-  { src: '/images/logos/Frame-4.webp', alt: 'Brandfolder' },
-  { src: '/images/logos/Vector.webp', alt: 'Other' },
+  { src: '/images/logos/bmw.webp', alt: 'BMW', width: 28, height: 32 },
+  { src: '/images/logos/porsche.webp', alt: 'Porsche', width: 69, height: 40 },
+  { src: '/images/logos/volvo.webp', alt: 'Volvo', width: 126, height: 20 },
+  { src: '/images/logos/software-ag.webp', alt: 'Software AG', width: 113, height: 20 },
+  { src: '/images/logos/santander.webp', alt: 'Santander', width: 99, height: 20 },
+  {
+    src: '/images/logos/british-airways.webp',
+    alt: 'British Airways',
+    width: 128,
+    height: 20,
+  },
 ];
 
 function FieldLabel({
@@ -128,14 +133,14 @@ export default function HatchContact({
             {LOGOS.map((l) => (
               <span
                 key={l.src}
-                className="group inline-flex cursor-default items-center justify-center px-1.5 py-1"
+                className="group inline-flex h-10 cursor-default items-center justify-center px-1.5"
               >
                 <Image
                   src={l.src}
                   alt={l.alt}
-                  width={110}
-                  height={24}
-                  className="h-5 w-auto object-contain brightness-[0.82] transition-[filter] duration-200 ease-out group-hover:brightness-[0.58] dark:brightness-[0.88] dark:group-hover:brightness-[0.68]"
+                  width={l.width}
+                  height={l.height}
+                  className="object-contain grayscale opacity-65 transition-opacity duration-200 ease-out group-hover:opacity-90 dark:invert"
                 />
               </span>
             ))}
