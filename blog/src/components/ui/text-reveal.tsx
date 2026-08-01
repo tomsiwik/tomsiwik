@@ -75,9 +75,8 @@ const TextReveal = React.memo(function TextReveal({
     ),
     style: {
       fontSize,
-      color: hovered ? hoverColor : color,
-      backgroundColor: hovered ? hoverBackgroundColor : backgroundColor,
-      transition: `color ${duration}ms ${easing}, background-color ${duration}ms ${easing}`,
+      color,
+      backgroundColor,
       padding: '0.15em 0.4em',
       lineHeight: 1,
       ...style,
@@ -105,7 +104,10 @@ const TextReveal = React.memo(function TextReveal({
   return (
     <Component {...rootProps}>
       <span className="relative inline-grid overflow-hidden" aria-hidden="true">
-        <span className={cn('inline-flex', textClassName)} style={rowStyle}>
+        <span
+          className={cn('inline-flex', textClassName)}
+          style={{ ...rowStyle, color }}
+        >
           {chars.map((char, index) => (
             <span
               key={`${char}-${index}`}
@@ -122,12 +124,19 @@ const TextReveal = React.memo(function TextReveal({
             </span>
           ))}
         </span>
-        <span className={cn('inline-flex', hoverTextClassName)} style={rowStyle}>
+        <span
+          className={cn('inline-flex', hoverTextClassName)}
+          style={{ ...rowStyle, color: hoverColor }}
+        >
           {hoverChars.map((char, index) => (
             <span
               key={`${char}-${index}`}
               className="inline-block will-change-transform"
               style={{
+                backgroundColor:
+                  char === ' ' ? 'transparent' : hoverBackgroundColor,
+                marginInline: char === ' ' ? 0 : '0.015em',
+                paddingInline: char === ' ' ? 0 : '0.05em',
                 transition: `transform ${duration}ms ${easing}`,
                 transitionDelay: `${index * staggerDelay}ms`,
                 transform: hovered
