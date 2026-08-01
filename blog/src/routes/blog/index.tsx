@@ -2,7 +2,6 @@ import { createFileRoute } from '@tanstack/react-router';
 import { RssIcon } from 'lucide-react';
 
 import { PostCard } from '@/components/blog/post-card';
-import { Badge } from '@/components/ui/badge';
 import { loadPosts } from '@/lib/blog.functions';
 import { withBasePath } from '@/lib/paths';
 
@@ -51,7 +50,7 @@ function BlogIndex() {
       {posts.length > 4 ? (
         <section className="space-y-16 border-t pt-16">
           <div className="space-y-2.5">
-            <Badge className="border-black bg-black text-white">Thoughts</Badge>
+            <div className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Thoughts</div>
             <div className="flex justify-between gap-4 max-md:flex-col">
               <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">More notes from the workbench</h2>
               <p className="max-w-xl text-lg text-muted-foreground">Practical observations, working examples, and lessons gathered while making things for the web.</p>
@@ -66,7 +65,7 @@ function BlogIndex() {
 
       <section className="flex flex-col items-center gap-6 py-8 text-center">
         <RssIcon className="size-12" aria-hidden="true" />
-        <h2 className="max-w-md text-2xl font-semibold sm:text-3xl lg:text-4xl">Still using a feed reader?</h2>
+        <h2 className="max-w-md text-2xl font-semibold sm:text-3xl lg:text-4xl">Using a feed reader?</h2>
         <a href={withBasePath('/blog/feed.xml')} className="max-w-full overflow-x-auto font-mono text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">tomhacks.com/blog/feed.xml</a>
       </section>
     </main>

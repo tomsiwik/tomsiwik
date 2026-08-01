@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router';
-import { CalendarIcon, TagIcon, UserIcon } from 'lucide-react';
+import { TagIcon, UserIcon } from 'lucide-react';
 
 import { BlogCover } from '@/components/blog/blog-cover';
 import { Button } from '@/components/ui/button';
@@ -22,7 +22,7 @@ export function PostList({ posts }: { posts: BlogPost[] }) {
           </div>
           <div className="flex flex-1 flex-col">
             <div className="mb-2 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-              <span className="flex items-center gap-1"><CalendarIcon className="size-4" /><time dateTime={post.date}>{new Date(post.date).toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time></span>
+              <time dateTime={post.date} className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">{new Date(post.date).toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>
               <span className="flex items-center gap-1"><UserIcon className="size-4" />{post.author}</span>
               <Link to="/blog/categories/$slug" params={{ slug: taxonomySlug(post.category) }} className="hover:text-primary">{post.category}</Link>
             </div>

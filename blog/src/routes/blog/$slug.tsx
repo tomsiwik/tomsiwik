@@ -87,7 +87,7 @@ function PostContent({
         <header className="space-y-6">
           <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
           {description ? (
-            <p className="font-display text-xl leading-8 font-semibold text-muted-foreground">{description}</p>
+            <p className="font-sans text-xl leading-8 font-semibold text-muted-foreground">{description}</p>
           ) : null}
         </header>
 
@@ -105,7 +105,7 @@ function PostContent({
       {related.length > 0 ? (
         <section className="mt-24 space-y-12">
           <div className="space-y-2.5">
-            <span className="inline-flex rounded-full border-black bg-black px-2.5 py-0.5 text-xs font-semibold text-white">Keep reading</span>
+            <span className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Keep reading</span>
             <div className="flex justify-between gap-4 max-md:flex-col">
               <h2 className="text-2xl font-semibold sm:text-3xl lg:text-4xl">More writing</h2>
               <p className="max-w-xl text-lg text-muted-foreground">Two more notes about making useful, resilient products for the web.</p>
