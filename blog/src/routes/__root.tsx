@@ -41,7 +41,7 @@ function RootComponent() {
       </head>
       <body className="min-h-screen antialiased">
         <RootProvider
-          theme={{ defaultTheme: 'light', enableSystem: true, disableTransitionOnChange: true }}
+          theme={{ defaultTheme: 'dark', enableSystem: true, disableTransitionOnChange: true }}
         >
           <MotionConfig reducedMotion="user">
             <div className="flex min-h-screen flex-col">
