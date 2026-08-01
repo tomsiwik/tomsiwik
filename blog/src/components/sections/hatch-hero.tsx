@@ -33,7 +33,7 @@ export default function HatchHero({
             as a{' '}
             <span className="relative inline-block">
               developer
-              <span className="font-text absolute -right-[0.35em] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[0.28em] leading-none font-semibold text-primary">
+              <span className="absolute -right-[0.35em] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[0.5em] leading-none font-semibold text-primary">
                 AI engineer
               </span>
             </span>
