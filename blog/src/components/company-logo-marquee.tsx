@@ -11,8 +11,8 @@ const LOGOS: Array<{
 }> = [
   {
     src: '/images/logos/bmw-group.webp',
-    alt: 'BMW Group',
-    width: 150,
+    alt: 'BMW',
+    width: 76,
     height: 18,
   },
   {
@@ -34,6 +34,7 @@ const LOGOS: Array<{
     alt: 'Santander',
     width: 125,
     height: 25,
+    className: '-translate-y-0.5',
   },
   {
     src: '/images/logos/british-airways.webp',
