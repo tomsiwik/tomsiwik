@@ -19,27 +19,27 @@ type HatchHeroProps = {
 
 export default function HatchHero({
   primaryCtaHref = '/contact',
-  primaryCtaLabel = 'Get a quote',
+  primaryCtaLabel = 'Working on',
   secondaryCtaHref = '/contact',
-  secondaryCtaLabel = 'Book a call',
+  secondaryCtaLabel = 'Build',
 }: HatchHeroProps) {
   return (
     <section className="bg-background relative overflow-hidden">
       <div className="relative pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14">
         <div className="container text-start">
           <h1 className="font-display text-4xl leading-[1.06] font-medium text-balance sm:text-5xl lg:text-6xl lg:leading-[1.05]">
-            I design digital products that make
-            <br className="hidden sm:block" /> business feel simple.
+            I write about my journey as a developer, indie hacker and AI engineer
           </h1>
           <p className="font-text text-muted-foreground mt-6 text-base leading-[140%]">
-            Freelance{' '}
+            Freelanced as a{' '}
             <span className="text-foreground decoration-border font-medium underline decoration-dotted underline-offset-4">
-              Product Designer
-            </span>{' '}
-            helping startups and agencies craft clean,{' '}
-            <span className="text-foreground decoration-border font-medium underline decoration-dotted underline-offset-4">
-              Conversion-Focused Interfaces.
+              Senior Developer
             </span>
+            {', helped startups, banks and the automotive industry craft sophisticated '}
+            <span className="text-foreground decoration-border font-medium underline decoration-dotted underline-offset-4">
+              platforms and software
+            </span>
+            {' - my work speaks for itself:'}
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-start gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Button
@@ -67,7 +67,7 @@ export default function HatchHero({
                 <Image src="/images/brand/tom-siwik.jpg" alt="Tom Siwik" fill sizes="28px" className="object-cover" priority />
               </Avatar>
               <span className="leading-snug">
-                Writing and building at tomhacks.com
+                Current project epicat.com
               </span>
             </div>
           </div>
