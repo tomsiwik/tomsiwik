@@ -34,7 +34,7 @@ function BlogIndex() {
         <div className="mx-auto max-w-3xl space-y-4 text-center">
           <h1 className="text-3xl leading-tight font-bold sm:text-4xl">Blog</h1>
           <p className="text-muted-foreground text-xl">
-            Notes on design, development, accessibility, and the small details that make software feel considered.
+            Notes and thoughts about development, design, AI, and every day struggles to create something.
           </p>
         </div>
       </section>
