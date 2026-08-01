@@ -19,7 +19,7 @@ function PostsPage() {
   const posts = Route.useLoaderData();
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 py-8 md:px-6 md:py-16">
+    <main className="container py-8 md:py-16">
       <header className="border-b pb-8">
         <h1 className="text-4xl font-bold">All posts</h1>
         <p className="text-muted-foreground mt-2">{posts.length} posts</p>

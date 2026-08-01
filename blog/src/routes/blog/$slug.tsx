@@ -77,7 +77,7 @@ function PostContent({
   const MDX = page.body;
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 md:px-6 md:py-16">
+    <main className="container flex-1 py-8 md:py-16">
       <nav aria-label="Breadcrumb" className="flex min-w-0 items-center gap-2 text-sm text-muted-foreground">
         <Link to="/" className="hover:text-foreground">Home</Link>
         <ChevronRightIcon className="size-4 shrink-0" />
@@ -86,8 +86,8 @@ function PostContent({
         <span className="truncate text-foreground">{title}</span>
       </nav>
 
-      <div className="mt-10 grid grid-cols-1 gap-16 lg:grid-cols-12">
-        <article className="min-w-0 lg:col-span-8">
+      <div className="relative mt-10">
+        <article className="min-w-0">
           <header className="space-y-6">
             <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
             {description ? (
@@ -106,26 +106,28 @@ function PostContent({
           </div>
         </article>
 
-        <aside className="hidden space-y-10 lg:sticky lg:top-20 lg:col-span-4 lg:block lg:self-start">
-          <AuthorCard name={author} role="Author · tomhacks.com" avatarUrl={withBasePath('/images/brand/tom-siwik.jpg')} website="https://tomhacks.com" />
-          {toc.length > 0 ? (
-            <nav aria-label="Table of contents">
-              <h2 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground"><TextIcon className="size-4" />Table of contents</h2>
-              <div className="relative mt-4 flex flex-col">
-                <div className="absolute inset-y-0 left-0 w-px bg-border" />
-                {toc.map((item) => (
-                  <a
-                    key={item.url}
-                    href={item.url}
-                    className="relative py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    style={{ paddingInlineStart: item.depth <= 2 ? 12 : item.depth === 3 ? 24 : 32 }}
-                  >
-                    {item.title}
-                  </a>
-                ))}
-              </div>
-            </nav>
-          ) : null}
+        <aside className="absolute inset-y-0 left-full ml-8 hidden w-56 min-[1680px]:block">
+          <div className="sticky top-20 space-y-10">
+            <AuthorCard name={author} role="Author · tomhacks.com" avatarUrl={withBasePath('/images/brand/tom-siwik.jpg')} website="https://tomhacks.com" />
+            {toc.length > 0 ? (
+              <nav aria-label="Table of contents">
+                <h2 className="inline-flex items-center gap-1.5 text-sm text-muted-foreground"><TextIcon className="size-4" />Table of contents</h2>
+                <div className="relative mt-4 flex flex-col">
+                  <div className="absolute inset-y-0 left-0 w-px bg-border" />
+                  {toc.map((item) => (
+                    <a
+                      key={item.url}
+                      href={item.url}
+                      className="relative py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      style={{ paddingInlineStart: item.depth <= 2 ? 12 : item.depth === 3 ? 24 : 32 }}
+                    >
+                      {item.title}
+                    </a>
+                  ))}
+                </div>
+              </nav>
+            ) : null}
+          </div>
         </aside>
       </div>
 
