@@ -10,16 +10,16 @@ const LOGOS: Array<{
   className?: string;
 }> = [
   {
-    src: '/images/logos/bmw-group.webp',
-    alt: 'BMW',
-    width: 76,
-    height: 18,
-  },
-  {
     src: '/images/logos/porsche-wordmark.webp',
     alt: 'Porsche',
     width: 165,
     height: 11,
+  },
+  {
+    src: '/images/logos/bmw-group.webp',
+    alt: 'BMW',
+    width: 76,
+    height: 18,
   },
   { src: '/images/logos/volvo.webp', alt: 'Volvo', width: 126, height: 20 },
   {

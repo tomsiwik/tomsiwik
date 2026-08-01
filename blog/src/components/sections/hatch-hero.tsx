@@ -10,12 +10,12 @@ import { Button } from '@/components/ui/button';
 import { TextReveal } from '@/components/ui/text-reveal';
 
 const AVATARS = [
+  '/images/avatars/avatar-6.webp',
   '/images/avatars/avatar-1.webp',
   '/images/avatars/avatar-2.webp',
   '/images/avatars/avatar-3.webp',
   '/images/avatars/avatar-4.webp',
   '/images/avatars/avatar-5.webp',
-  '/images/avatars/avatar-6.webp',
 ];
 
 type HatchHeroProps = {
