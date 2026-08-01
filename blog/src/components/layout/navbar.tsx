@@ -97,16 +97,8 @@ export default function Navbar() {
             aria-label="Tom Hacks home"
           >
             <Image
-              src="/images/brand/tomhacks-logo.svg"
-              alt="Tom Hacks"
-              width={44}
-              height={28}
-              className="dark:invert"
-              priority
-            />
-            <Image
               src="/images/brand/tomhacks-matrix-logo.svg"
-              alt=""
+              alt="Tom Hacks"
               width={55}
               height={20}
               priority
