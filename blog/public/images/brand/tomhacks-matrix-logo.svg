@@ -1,12 +1,13 @@
 <svg width="110" height="40" viewBox="0 0 110 40" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
   <style>
-    .r { fill: #c30047; }
+    :root { --logo-primary: oklch(0.52 0.21 12.29); }
+    .r { fill: var(--logo-primary); }
     .w { fill: #fff; }
     .b { fill: #00c7f6; }
     @media (prefers-color-scheme: light) {
       .r { fill: #d4d4d4; }
-      .w { fill: #c30047; }
-      .b { fill: #d4d4d4; }
+      .w { fill: oklch(from var(--logo-primary) calc(l + 0.12) c h); }
+      .b { fill: #fff; }
     }
   </style>
 
