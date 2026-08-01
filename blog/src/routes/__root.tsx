@@ -5,6 +5,7 @@ import appCss from '@/styles/app.css?url';
 import { RootProvider } from 'fumadocs-ui/provider/tanstack';
 import { Footer } from '@/components/layout/footer';
 import Navbar from '@/components/layout/navbar';
+import { withBasePath } from '@/lib/paths';
 
 export const Route = createRootRoute({
   head: () => ({
@@ -27,7 +28,7 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', href: '/tomsiwik/favicon/favicon.ico' },
+      { rel: 'icon', href: withBasePath('/favicon/favicon.ico') },
     ],
   }),
   component: RootComponent,

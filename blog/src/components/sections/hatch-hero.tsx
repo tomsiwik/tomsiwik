@@ -28,7 +28,15 @@ export default function HatchHero({
       <div className="relative pt-16 pb-10 sm:pt-20 sm:pb-12 lg:pt-24 lg:pb-14">
         <div className="container text-start">
           <h1 className="font-display text-4xl leading-[1.06] font-medium text-balance sm:text-5xl lg:text-6xl lg:leading-[1.05]">
-            I write about my journey as a developer, indie hacker and AI engineer
+            I write about my journey
+            <br />
+            as a{' '}
+            <span className="relative inline-block">
+              developer
+              <span className="font-text absolute -right-[0.35em] -bottom-[0.15em] z-10 -rotate-3 whitespace-nowrap text-[0.28em] leading-none font-semibold text-primary">
+                AI engineer
+              </span>
+            </span>
           </h1>
           <p className="font-text text-muted-foreground mt-6 text-base leading-[140%]">
             Freelanced as a{' '}

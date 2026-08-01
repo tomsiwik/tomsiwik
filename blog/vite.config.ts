@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 import { fumadocsMdx } from 'fumadocs-mdx/vite';
 import { nitro } from 'nitro/vite';
 
-export default defineConfig({
-  base: '/tomsiwik/',
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/tomsiwik/',
   optimizeDeps: {
     include: ['use-sync-external-store/shim/with-selector'],
   },
@@ -50,7 +50,7 @@ export default defineConfig({
     react(),
     // please see https://tanstack.com/start/latest/docs/framework/react/guide/hosting#nitro for guides on hosting
     nitro({
-      baseURL: '/tomsiwik/',
+      baseURL: command === 'serve' ? '/' : '/tomsiwik/',
     }),
   ],
   resolve: {
@@ -59,4 +59,4 @@ export default defineConfig({
       tslib: 'tslib/tslib.es6.js',
     },
   },
-});
+}));
