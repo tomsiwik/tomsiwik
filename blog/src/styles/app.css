@@ -32,7 +32,7 @@
   --popover: oklch(1 0 89.88); /* #FFFFFF */
   --popover-foreground: oklch(0.172 0.006 286.3); /* #0D0D12 */
   /* Tom Hacks brand accent */
-  --hatch-cta: oklch(0.52 0.21 12.29);
+  --hatch-cta: oklch(0.56 0.23 13.19);
   --primary: var(--hatch-cta);
   --primary-foreground: oklch(1 0 89.88); /* #FFFFFF */
   --primary-hover: oklch(0.45 0.21 12.29);
