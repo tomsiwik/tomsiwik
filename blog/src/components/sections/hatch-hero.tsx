@@ -5,9 +5,24 @@ import Image from '@/components/image';
 import Link from '@/components/link';
 import * as React from 'react';
 
-import { Avatar } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { TextReveal } from '@/components/ui/text-reveal';
+
+const AVATARS = [
+  '/images/avatars/avatar-1.webp',
+  '/images/avatars/avatar-2.webp',
+  '/images/avatars/avatar-3.webp',
+  '/images/avatars/avatar-4.webp',
+];
+
+const LOGOS = [
+  { src: '/images/logos/Frame.webp', alt: 'Flickr' },
+  { src: '/images/logos/Frame-1.webp', alt: 'Intel' },
+  { src: '/images/logos/Frame-2.webp', alt: 'Gravatar' },
+  { src: '/images/logos/Frame-3.webp', alt: 'Appcircle' },
+  { src: '/images/logos/Frame-4.webp', alt: 'Brandfolder' },
+  { src: '/images/logos/Vector.webp', alt: 'Other' },
+];
 
 type HatchHeroProps = {
   title?: React.ReactNode;
@@ -37,8 +52,9 @@ export default function HatchHero({
               <TextReveal
                 as="span"
                 text="& AI Engineer"
-                hoverText="& Vibecoder"
+                hoverText="$ Vibecoder"
                 textClassName="font-mono"
+                hoverTextClassName="font-pixel font-normal"
                 className="font-display absolute left-full -bottom-[0.15em] z-10 -rotate-3 font-semibold"
                 color="var(--primary)"
               />
@@ -75,15 +91,44 @@ export default function HatchHero({
               <Link href={secondaryCtaHref}>{secondaryCtaLabel}</Link>
             </Button>
           </div>
-          <div className="mt-7 flex items-start justify-start sm:mt-8">
-            <div className="bg-muted text-muted-foreground flex min-h-10 items-center gap-3 rounded-full py-1 pr-5 pl-2 text-sm">
-              <Avatar className="bg-muted relative size-7 border-2 border-white">
-                <Image src="/images/brand/tom-siwik.jpg" alt="Tom Siwik" fill sizes="28px" className="object-cover" priority />
-              </Avatar>
-              <span className="leading-snug">
-                Current project epicat.com
-              </span>
+          <div className="mt-10 flex max-w-full">
+            <div className="bg-muted text-muted-foreground flex max-w-full flex-wrap items-center gap-3 rounded-full px-3 py-2 text-sm sm:px-4">
+              <div className="flex shrink-0 -space-x-2">
+                {AVATARS.map((src, index) => (
+                  <div
+                    key={src}
+                    className="bg-muted relative h-7 w-7 overflow-hidden rounded-full"
+                  >
+                    <Image
+                      src={src}
+                      alt=""
+                      fill
+                      sizes="28px"
+                      className="object-cover"
+                      priority={index < 2}
+                    />
+                  </div>
+                ))}
+              </div>
+              <span>The work that’s trusted by teams and founders</span>
             </div>
+          </div>
+
+          <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+            {LOGOS.map((logo) => (
+              <span
+                key={logo.src}
+                className="group inline-flex cursor-default items-center justify-center px-1.5 py-1"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={110}
+                  height={24}
+                  className="h-5 w-auto object-contain brightness-[0.82] transition-[filter] duration-200 ease-out group-hover:brightness-[0.58] dark:brightness-[0.88] dark:group-hover:brightness-[0.68]"
+                />
+              </span>
+            ))}
           </div>
         </div>
       </div>
