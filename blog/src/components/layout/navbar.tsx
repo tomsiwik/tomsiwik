@@ -12,10 +12,9 @@ import { cn } from '@/lib/utils';
 const HEADER_HEIGHT = 80;
 
 const ITEMS = [
-  { label: 'Home', href: '/' },
-  { label: 'Services', href: '/services' },
-  { label: 'Work', href: '/work' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Projects', href: '/work' },
+  { label: 'Work', href: '/services' },
   { label: 'About', href: '/about' },
 ];
 
@@ -107,7 +106,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex">
+          <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
             {ITEMS.map((link) => {
               const active = pathname === link.href;
               return (
@@ -129,11 +128,7 @@ export default function Navbar() {
 
           <div className="flex min-w-0 items-center justify-end gap-3">
             <div className="flex min-w-0 items-center gap-3">
-              <ProfileAvatar
-                src={withBasePath('/images/brand/tom-siwik.jpg')}
-                name="Tom Siwik"
-              />
-              <span className="min-w-0">
+              <span className="min-w-0 text-right">
                 <span className="block truncate text-sm font-semibold">Tom Siwik</span>
                 <a
                   href="https://x.com/tomhacks"
@@ -144,6 +139,10 @@ export default function Navbar() {
                   x.com/tomhacks
                 </a>
               </span>
+              <ProfileAvatar
+                src={withBasePath('/images/brand/tom-siwik.jpg')}
+                name="Tom Siwik"
+              />
             </div>
             <button
               type="button"
