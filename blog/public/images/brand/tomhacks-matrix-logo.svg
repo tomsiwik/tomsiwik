@@ -1,10 +1,14 @@
 <svg width="110" height="40" viewBox="0 0 110 40" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
   <style>
+    .r { fill: #c30047; }
     .w { fill: #fff; }
-    @media (prefers-color-scheme: light) { .w { fill: #17181c; } }
+    @media (prefers-color-scheme: light) {
+      .r { fill: #17181c; }
+      .w { fill: #c30047; }
+    }
   </style>
 
-  <g fill="#c30047">
+  <g class="r">
     <rect x="0" y="0" width="10" height="10" />
     <rect x="10" y="0" width="10" height="10" />
     <rect x="20" y="0" width="10" height="10" />
