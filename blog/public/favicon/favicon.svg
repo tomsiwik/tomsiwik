@@ -1,11 +1,11 @@
-<svg width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
   <style>
     .h { fill: #fff; }
     @media (prefers-color-scheme: light) { .h { fill: #17181c; } }
   </style>
-  <g transform="translate(6)">
-    <path fill="#c30047" d="M0 0h10v10H0zM12 0h10v10H12zM24 0h10v10H24zM12 12h10v10H12z"/>
-    <path class="h" d="M0 12h10v10H0zM24 12h10v10H24zM0 24h10v10H0zM12 24h10v10H12zM24 24h10v10H24zM0 36h10v10H0zM24 36h10v10H24z"/>
-    <path fill="#00c7f6" d="M12 36h10v10H12z"/>
+  <g transform="translate(5)">
+    <path fill="#c30047" d="M0 0h10v10H0zM10 0h10v10H10zM20 0h10v10H20zM10 10h10v10H10z"/>
+    <path class="h" d="M0 10h10v10H0zM20 10h10v10H20zM0 20h10v10H0zM10 20h10v10H10zM20 20h10v10H20zM0 30h10v10H0zM20 30h10v10H20z"/>
+    <path fill="#00c7f6" d="M10 30h10v10H10z"/>
   </g>
 </svg>
