@@ -1,3 +1,11 @@
-<svg width="64" height="64" viewBox="-20.854 -6 85.168 85.168" xmlns="http://www.w3.org/2000/svg">
-  <path d="M43.46 0v14.634H28.973v58.534H14.487V14.634H0V0h43.46Z" fill="#c30047"/>
+<svg width="46" height="46" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .h { fill: #fff; }
+    @media (prefers-color-scheme: light) { .h { fill: #17181c; } }
+  </style>
+  <g transform="translate(6)">
+    <path fill="#c30047" d="M0 0h10v10H0zM12 0h10v10H12zM24 0h10v10H24zM12 12h10v10H12z"/>
+    <path class="h" d="M0 12h10v10H0zM24 12h10v10H24zM0 24h10v10H0zM12 24h10v10H12zM24 24h10v10H24zM0 36h10v10H0zM24 36h10v10H24z"/>
+    <path fill="#00c7f6" d="M12 36h10v10H12z"/>
+  </g>
 </svg>

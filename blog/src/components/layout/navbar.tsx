@@ -1,6 +1,6 @@
 'use client';
 
-import Image from '@/components/image';
+import { BrandLogo } from '@/components/brand-logo';
 import Link from '@/components/link';
 import { useLocation } from '@tanstack/react-router';
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -96,14 +96,7 @@ export default function Navbar() {
             className="flex shrink-0 items-center gap-2"
             aria-label="Tom Hacks home"
           >
-            <Image
-              src="/images/brand/tomhacks-logo.svg"
-              alt="Tom Hacks"
-              width={44}
-              height={28}
-              className="dark:invert"
-              priority
-            />
+            <BrandLogo className="text-foreground h-10 w-auto" />
           </Link>
 
           <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 lg:flex">
