@@ -1,5 +1,4 @@
 import { Link } from '@tanstack/react-router';
-import { CalendarIcon } from 'lucide-react';
 
 import { BlogCover } from '@/components/blog/blog-cover';
 import { Button } from '@/components/ui/button';
@@ -7,7 +6,7 @@ import type { BlogPost } from '@/lib/blog';
 
 function PostDate({ date }: { date: string }) {
   return (
-    <time dateTime={date}>
+    <time dateTime={date} className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">
       {new Date(date).toLocaleDateString('en', {
         day: 'numeric',
         month: 'long',
@@ -30,8 +29,7 @@ export function PostCard({ post, variant = 'default' }: { post: BlogPost; varian
             <h3 className="line-clamp-2 text-base font-medium">
               <Link to="/blog/$slug" params={{ slug: post.slug }} className="hover:text-primary">{post.title}</Link>
             </h3>
-            <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <CalendarIcon className="size-4.5" />
+            <div className="text-sm text-muted-foreground">
               <PostDate date={post.date} />
             </div>
           </div>
@@ -51,8 +49,7 @@ export function PostCard({ post, variant = 'default' }: { post: BlogPost; varian
         </h3>
         {post.description ? <p className="mb-5 line-clamp-2 text-base text-muted-foreground">{post.description}</p> : null}
         <div className="mt-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <CalendarIcon className="size-4.5" />
+          <div className="text-sm text-muted-foreground">
             <PostDate date={post.date} />
           </div>
           <Button variant="outline" size="sm" asChild>
