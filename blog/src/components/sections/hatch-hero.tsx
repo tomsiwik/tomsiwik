@@ -16,8 +16,8 @@ const AVATARS = [
 ];
 
 const LOGOS = [
-  { src: '/images/logos/bmw.webp', alt: 'BMW', width: 28, height: 32 },
-  { src: '/images/logos/porsche.webp', alt: 'Porsche', width: 69, height: 40 },
+  { src: '/images/logos/bmw.webp', alt: 'BMW Group', width: 123, height: 18 },
+  { src: '/images/logos/porsche.webp', alt: 'Porsche', width: 180, height: 12 },
   { src: '/images/logos/volvo.webp', alt: 'Volvo', width: 126, height: 20 },
   { src: '/images/logos/software-ag.webp', alt: 'Software AG', width: 113, height: 20 },
   { src: '/images/logos/santander.webp', alt: 'Santander', width: 99, height: 20 },
@@ -123,7 +123,7 @@ export default function HatchHero({
             </div>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-x-8 gap-y-4">
+          <div className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-4 sm:gap-x-8">
             {LOGOS.map((logo) => (
               <span
                 key={logo.src}
