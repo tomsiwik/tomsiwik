@@ -17,7 +17,7 @@ function TagPage() {
   return (
     <main className="mx-auto w-full max-w-5xl px-6 py-16">
       <header className="border-b pb-8">
-        <p className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Tag</p>
+        <p className="font-sans text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">Tag</p>
         <h1 className="mt-3 text-4xl font-semibold tracking-tight">{tag.title}</h1>
         <p className="text-muted-foreground mt-2">{posts.length} posts</p>
       </header>

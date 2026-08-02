@@ -28,7 +28,7 @@ function MetaCard({ label, value, iconSrc }: { label: string; value: string; ico
         aria-hidden
         className="mb-4 opacity-85 dark:invert"
       />
-      <div className="font-pixel text-[10px] font-semibold tracking-[0.28em] text-[var(--hatch-cta)] uppercase">
+      <div className="font-sans text-[10px] font-semibold tracking-[0.28em] text-[var(--hatch-cta)] uppercase">
         {label}
       </div>
       <div className="mt-1 text-base font-semibold">{value}</div>
