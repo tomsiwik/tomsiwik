@@ -17,6 +17,14 @@
   font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Kalmansk';
+  src: url('/fonts/kalmansk-regular.otf') format('opentype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 @custom-variant dark (&:is(.dark *));
 @custom-variant fhd (@media (min-width: 1920px));
 @custom-variant uw (@media (min-width: 2250px));
@@ -180,6 +188,7 @@
   --font-display-mono: 'Courier Prime', ui-monospace, monospace;
   --font-pixel: 'Geist Pixel', monospace;
   --font-jersey: 'Jersey 20', sans-serif;
+  --font-experiment: 'Kalmansk', sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
