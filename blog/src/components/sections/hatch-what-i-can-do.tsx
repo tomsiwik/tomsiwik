@@ -2,9 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, Plus } from 'lucide-react';
+import Image from '@/components/image';
 import Link from '@/components/link';
 
-import { PrimarySvgIcon } from '@/components/primary-svg-icon';
 import { Button } from '@/components/ui/button';
 import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
@@ -15,9 +15,9 @@ type Service = {
   title: string;
   description?: string;
   category: string;
-  /** Public SVG path for `PrimarySvgIcon` (filled with `bg-primary`) */
   iconSrc: string;
-  slug: string;
+  href: string;
+  invertInDark?: boolean;
 };
 
 type HatchWhatICanDoProps = {
@@ -42,34 +42,35 @@ const DEFAULT_BULLETS: string[] = [
 
 const DEFAULT_SERVICES: Service[] = [
   {
-    title: 'Brand Design',
-    category: 'Brand',
-    description: 'Clear visual identities that stand out and scale.',
-    iconSrc: '/images/services/noun-sparkle-7746005.svg',
-    slug: 'brand-design',
+    title: 'Epicat',
+    category: 'epicat.com',
+    description: 'No-code agentic team builder.',
+    iconSrc: '/images/projects/epicat.svg',
+    href: 'https://epicat.com',
+    invertInDark: true,
   },
   {
-    title: 'Web Design & UX',
-    category: 'UX & Web',
-    description:
-      'Beautiful, conversion-focused websites that feel effortless to use.',
-    iconSrc: '/images/services/noun-half-circles-7745954.svg',
-    slug: 'web-design-ux',
+    title: 'Godmode',
+    category: 'godmode.so',
+    description: 'Agentic sandboxed Swiss army knife.',
+    iconSrc: '/images/projects/godmode.svg',
+    href: 'https://godmode.so',
+    invertInDark: true,
   },
   {
-    title: 'Product Design',
-    category: 'Product',
-    description:
-      'Scalable component libraries for consistent, efficient UI design.',
-    iconSrc: '/images/services/noun-semicircles-8294628.svg',
-    slug: 'product-design',
+    title: 'Dojocho',
+    category: 'dojocho.ai',
+    description: 'Installable coding practices (katas).',
+    iconSrc: '/images/projects/dojocho.svg',
+    href: 'https://dojocho.ai',
   },
   {
-    title: 'Framer Development',
-    category: 'Build',
-    description: 'Interactive sites built fast without compromising quality.',
-    iconSrc: '/images/services/noun-star-7745963.svg',
-    slug: 'framer-development',
+    title: 'Nerdbooks',
+    category: 'nerdbooks.net',
+    description: "Find the books you didn't know you needed.",
+    iconSrc: '/images/projects/nerdbooks.svg',
+    href: 'https://nerdbooks.net',
+    invertInDark: true,
   },
 ];
 
@@ -142,24 +143,31 @@ export default function HatchWhatICanDo({
           <div className="border-border/40 divide-border/40 flex flex-col divide-y lg:col-span-2">
             {list.map((service) => (
               <motion.div
-                key={service.slug}
+                key={service.href}
                 variants={fadeVariants}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, amount: 0.25 }}
               >
                 <Link
-                  href={`/services/${service.slug}`}
+                  href={service.href}
+                  target="_blank"
+                  rel="noreferrer"
                   className={cn(
                     'group flex items-start gap-5 py-6 transition-colors sm:py-7 lg:gap-6',
                     'hover:text-foreground',
                   )}
                 >
                   <div className="relative shrink-0 pt-0.5">
-                    <PrimarySvgIcon
+                    <Image
                       src={service.iconSrc}
+                      alt=""
+                      width={48}
+                      height={48}
                       className={cn(
                         'size-11 sm:size-12',
+                        'object-contain',
+                        service.invertInDark && 'dark:invert',
                         'motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out',
                         'group-hover:scale-[1.06]',
                       )}
