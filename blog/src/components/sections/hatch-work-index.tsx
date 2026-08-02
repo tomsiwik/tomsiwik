@@ -7,6 +7,7 @@ import Link from '@/components/link';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
+import { WorkLogo } from '@/components/work-logo';
 import type { Project } from '@/lib/content';
 import { fadeVariants } from '@/lib/motion';
 import { cn } from '@/lib/utils';
@@ -30,17 +31,18 @@ function ProjectCard({ p, priority }: { p: Project; priority?: boolean }) {
             sizes="(min-width:1024px) 360px, 92vw"
             priority={priority}
           />
+          <WorkLogo slug={p.slug} variant="card" />
         </div>
 
         <div
           className={cn(
-            'pointer-events-none absolute inset-0 z-10',
+            'pointer-events-none absolute inset-0 z-20',
             'bg-foreground/0 transition-colors duration-200',
             'group-hover:bg-foreground/20',
           )}
         />
 
-        <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+        <div className="pointer-events-none absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100">
           <span className="bg-background/90 text-foreground inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium shadow-xs backdrop-blur">
             View project <ArrowRight className="size-4" />
           </span>

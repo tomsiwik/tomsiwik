@@ -16,7 +16,7 @@ const WORK_LOGOS: Record<
     width: 819,
     height: 128,
     tone: 'light',
-    className: 'translate-x-[8%]',
+    className: 'translate-x-[8%] -translate-y-[8%]',
   },
   epoch: { src: '/images/logos/bmw-group.webp', width: 540, height: 128, tone: 'light' },
   pace: {
