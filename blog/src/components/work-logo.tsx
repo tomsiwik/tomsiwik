@@ -49,7 +49,7 @@ export function WorkLogo({ slug, variant }: { slug: string; variant: 'card' | 'h
       aria-hidden
     >
       {slug === 'epoch' ? (
-        <span className={cn('overflow-hidden', variant === 'card' ? 'size-10' : 'size-7')}>
+        <span className={cn('overflow-hidden', variant === 'card' ? 'size-10' : 'size-[5.25rem]')}>
           <Image
             src={logo.src}
             alt=""
@@ -66,7 +66,7 @@ export function WorkLogo({ slug, variant }: { slug: string; variant: 'card' | 'h
           height={logo.height}
           className={cn(
             'w-auto object-contain opacity-95',
-            variant === 'card' ? 'h-10 max-w-[58%]' : 'h-7 max-w-[18%]',
+            variant === 'card' ? 'h-10 max-w-[58%]' : 'h-[5.25rem] max-w-[54%]',
             toneClass,
             logo.className,
           )}
