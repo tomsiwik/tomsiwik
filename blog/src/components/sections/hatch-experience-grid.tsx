@@ -53,7 +53,7 @@ function ExperienceCard({
         spanFull && 'lg:col-span-2',
       )}
     >
-      <div className="font-jersey text-hatch-cta text-sm font-semibold tracking-[0.28em]">
+      <div className="font-sans text-hatch-cta text-sm font-semibold tracking-[0.28em]">
         {item.range}
       </div>
 

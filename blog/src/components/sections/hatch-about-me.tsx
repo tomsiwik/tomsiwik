@@ -28,7 +28,7 @@ export default function HatchAboutMe({
       <div className="section-padding container">
         <div className="mx-auto grid w-full items-stretch gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           <div>
-            <div className="font-jersey text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">
+            <div className="font-sans text-sm font-semibold tracking-[0.28em] text-[var(--hatch-cta)]">
               {eyebrow}
             </div>
 
