@@ -6,7 +6,7 @@ import type { BlogPost } from '@/lib/blog';
 
 function PostDate({ date }: { date: string }) {
   return (
-    <time dateTime={date} className="font-jersey text-sm font-semibold tracking-[0.28em] text-muted-foreground">
+    <time dateTime={date} className="font-jersey text-xs font-semibold tracking-[0.28em] text-muted-foreground/60">
       {new Date(date).toLocaleDateString('en', {
         day: 'numeric',
         month: 'long',
