@@ -117,7 +117,7 @@ export default function HatchHero({
                 >
                   Ask around
                 </a>
-                , my awesome collegues at these best companies
+                , my awesome colleagues work at these great companies
               </span>
             </div>
           </div>
