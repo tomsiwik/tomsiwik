@@ -6,6 +6,7 @@ import Link from '@/components/link';
 import { ProjectGallery } from '@/components/project-gallery';
 import HatchCta from '@/components/sections/hatch-cta';
 import { Button } from '@/components/ui/button';
+import { WorkLogo } from '@/components/work-logo';
 import { loadProject } from '@/lib/content.functions';
 
 export const Route = createFileRoute('/work/$slug')({
@@ -90,6 +91,7 @@ function WorkSlugPage() {
               sizes="(min-width: 1024px) 960px, 92vw"
               priority
             />
+            <WorkLogo slug={project.slug} variant="hero" />
           </div>
 
           <div className="mt-12 flex items-start justify-between gap-6">
