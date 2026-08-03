@@ -9,6 +9,7 @@ import {
   Suspense,
 } from 'react';
 
+import { ArticleImage } from '@/components/blog/article-image';
 import {
   Table,
   TableBody,
@@ -51,6 +52,7 @@ function MdxTableBody({ children, ...props }: ComponentProps<typeof TableBody>) 
 export function getMDXComponents(components?: MDXComponents) {
   return {
     ...defaultMdxComponents,
+    ArticleImage,
     InteractiveExample,
     table: MdxTable,
     thead: TableHeader,
