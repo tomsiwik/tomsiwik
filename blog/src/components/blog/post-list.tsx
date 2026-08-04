@@ -16,10 +16,11 @@ export function PostList({ posts }: { posts: BlogPost[] }) {
           <Link
             to="/blog/$slug"
             params={{ slug: post.slug }}
-            className="group flex flex-col gap-5 rounded-xl border bg-card p-5 shadow-xs transition-colors hover:border-foreground/30 focus-visible:border-foreground/30 focus-visible:outline-none md:flex-row md:items-center"
+            className="group flex flex-col gap-5 focus-visible:outline-none md:flex-row md:items-center"
           >
             <div className="relative aspect-video shrink-0 overflow-hidden rounded-lg md:w-48">
-              <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full" />
+              <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full transition-transform duration-300 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" />
+              <div className="pointer-events-none absolute inset-0 bg-foreground/0 transition-colors duration-200 group-hover:bg-foreground/20 group-focus-visible:bg-foreground/20" />
               <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
                 <span className="inline-flex items-center gap-2 rounded-full border bg-background/90 px-3 py-1.5 text-xs font-medium shadow-xs backdrop-blur">
                   Read article <ArrowRightIcon className="size-3" />
@@ -28,6 +29,7 @@ export function PostList({ posts }: { posts: BlogPost[] }) {
             </div>
             <div className="flex flex-1 flex-col">
               <div className="mb-2 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <time dateTime={post.date} className="font-sans text-[0.6875rem] font-normal tracking-normal text-muted-foreground/50">{new Date(post.date).toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>
                 <span className="flex items-center gap-1"><UserIcon className="size-4" />{post.author}</span>
                 <span>{post.category}</span>
               </div>
