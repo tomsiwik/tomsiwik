@@ -6,11 +6,27 @@ import type { BlogPost } from '@/lib/blog';
 
 function ReadArticleOverlay({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
-      <span className={`inline-flex items-center gap-2 rounded-full border bg-background/90 font-medium shadow-xs backdrop-blur ${compact ? 'px-3 py-1.5 text-xs' : 'px-4 py-2 text-sm'}`}>
-        Read article <ArrowRightIcon className={compact ? 'size-3' : 'size-4'} />
-      </span>
-    </div>
+    <>
+      <div className="pointer-events-none absolute inset-0 bg-foreground/0 transition-colors duration-200 group-hover:bg-foreground/20 group-focus-visible:bg-foreground/20" />
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+        <span className={`inline-flex items-center gap-2 rounded-full border bg-background/90 font-medium shadow-xs backdrop-blur ${compact ? 'px-3 py-1.5 text-xs' : 'px-4 py-2 text-sm'}`}>
+          Read article <ArrowRightIcon className={compact ? 'size-3' : 'size-4'} />
+        </span>
+      </div>
+    </>
+  );
+}
+
+function PostDate({ date }: { date: string }) {
+  return (
+    <time dateTime={date} className="font-sans text-[0.6875rem] font-normal tracking-normal text-muted-foreground/50">
+      {new Date(date).toLocaleDateString('en', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+        timeZone: 'UTC',
+      })}
+    </time>
   );
 }
 
@@ -21,14 +37,15 @@ export function PostCard({ post, variant = 'default' }: { post: BlogPost; varian
         <Link
           to="/blog/$slug"
           params={{ slug: post.slug }}
-          className="group flex min-w-0 justify-between gap-6 rounded-xl border bg-card px-6 py-5 shadow-xs transition-colors hover:border-foreground/30 focus-visible:border-foreground/30 focus-visible:outline-none max-sm:flex-col"
+          className="group flex min-w-0 justify-between gap-6 focus-visible:outline-none max-sm:flex-col"
         >
           <div className="relative h-50 overflow-hidden rounded-lg sm:size-30 sm:shrink-0">
-            <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full rounded-lg border-0" />
+            <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full rounded-lg border transition-transform duration-300 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" />
             <ReadArticleOverlay compact />
           </div>
           <div className="flex min-w-0 flex-1 flex-col justify-center gap-3.5">
             <h3 className="line-clamp-2 text-base font-medium">{post.title}</h3>
+            <PostDate date={post.date} />
           </div>
         </Link>
       </article>
@@ -40,15 +57,16 @@ export function PostCard({ post, variant = 'default' }: { post: BlogPost; varian
       <Link
         to="/blog/$slug"
         params={{ slug: post.slug }}
-        className="group flex h-full min-w-0 flex-col gap-6 rounded-xl border bg-card p-6 shadow-xs transition-colors hover:border-foreground/30 focus-visible:border-foreground/30 focus-visible:outline-none"
+        className="group flex h-full min-w-0 flex-col focus-visible:outline-none"
       >
         <div className="relative overflow-hidden rounded-lg">
-          <BlogCover title={post.title} description={post.description} coverImage={post.cover} className="h-65 rounded-lg border-0" />
+          <BlogCover title={post.title} description={post.description} coverImage={post.cover} className="h-65 rounded-lg border transition-transform duration-300 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" />
           <ReadArticleOverlay />
         </div>
-        <div className="flex min-w-0 flex-1 flex-col">
+        <div className="mt-6 flex min-w-0 flex-1 flex-col">
           <h3 className="mb-2 line-clamp-2 text-xl font-medium">{post.title}</h3>
           {post.description ? <p className="line-clamp-2 text-base text-muted-foreground">{post.description}</p> : null}
+          <div className="mt-3"><PostDate date={post.date} /></div>
         </div>
       </Link>
     </article>
