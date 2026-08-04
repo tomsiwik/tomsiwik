@@ -38,7 +38,7 @@ function Home() {
           <HatchSectionHeader title="What I'm writing about" />
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:mt-10">
             {posts.slice(0, 2).map((post) => (
-              <PostCard key={post.path} post={post} />
+              <PostCard key={post.path} post={post} boxed />
             ))}
           </div>
         </div>

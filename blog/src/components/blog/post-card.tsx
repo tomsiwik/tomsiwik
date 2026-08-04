@@ -3,6 +3,7 @@ import { ArrowRightIcon } from 'lucide-react';
 
 import { BlogCover } from '@/components/blog/blog-cover';
 import type { BlogPost } from '@/lib/blog';
+import { cn } from '@/lib/utils';
 
 function ReadArticleOverlay({ compact = false }: { compact?: boolean }) {
   return (
@@ -30,14 +31,17 @@ function PostDate({ date }: { date: string }) {
   );
 }
 
-export function PostCard({ post, variant = 'default' }: { post: BlogPost; variant?: 'default' | 'compact' }) {
+export function PostCard({ post, variant = 'default', boxed = false }: { post: BlogPost; variant?: 'default' | 'compact'; boxed?: boolean }) {
   if (variant === 'compact') {
     return (
       <article className="min-w-0">
         <Link
           to="/blog/$slug"
           params={{ slug: post.slug }}
-          className="group flex min-w-0 justify-between gap-6 focus-visible:outline-none max-sm:flex-col"
+          className={cn(
+            'group flex min-w-0 justify-between gap-6 focus-visible:outline-none max-sm:flex-col',
+            boxed && 'rounded-[18px] bg-muted/30 p-6 sm:p-7',
+          )}
         >
           <div className="relative h-50 overflow-hidden rounded-lg sm:size-30 sm:shrink-0">
             <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full rounded-lg border transition-transform duration-300 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" />
@@ -57,7 +61,10 @@ export function PostCard({ post, variant = 'default' }: { post: BlogPost; varian
       <Link
         to="/blog/$slug"
         params={{ slug: post.slug }}
-        className="group flex h-full min-w-0 flex-col focus-visible:outline-none"
+        className={cn(
+          'group flex h-full min-w-0 flex-col focus-visible:outline-none',
+          boxed && 'rounded-[18px] bg-muted/30 p-6 sm:p-7',
+        )}
       >
         <div className="relative overflow-hidden rounded-lg">
           <BlogCover title={post.title} description={post.description} coverImage={post.cover} className="h-65 rounded-lg border transition-transform duration-300 group-hover:scale-[1.02] group-focus-visible:scale-[1.02]" />
