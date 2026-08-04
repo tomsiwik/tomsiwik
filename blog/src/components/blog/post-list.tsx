@@ -1,10 +1,8 @@
 import { Link } from '@tanstack/react-router';
-import { TagIcon, UserIcon } from 'lucide-react';
+import { ArrowRightIcon, TagIcon, UserIcon } from 'lucide-react';
 
 import { BlogCover } from '@/components/blog/blog-cover';
-import { Button } from '@/components/ui/button';
 import type { BlogPost } from '@/lib/blog';
-import { taxonomySlug } from '@/lib/blog';
 
 export function PostList({ posts }: { posts: BlogPost[] }) {
   if (posts.length === 0) {
@@ -14,29 +12,32 @@ export function PostList({ posts }: { posts: BlogPost[] }) {
   return (
     <div className="grid gap-6">
       {posts.map((post) => (
-        <article key={post.path} className="flex flex-col gap-5 rounded-xl border bg-card p-5 shadow-xs transition-colors hover:border-foreground/20 md:flex-row md:items-center">
-          <div className="shrink-0 md:w-48">
-            <Link to="/blog/$slug" params={{ slug: post.slug }} className="relative block aspect-video overflow-hidden rounded-lg">
+        <article key={post.path}>
+          <Link
+            to="/blog/$slug"
+            params={{ slug: post.slug }}
+            className="group flex flex-col gap-5 rounded-xl border bg-card p-5 shadow-xs transition-colors hover:border-foreground/30 focus-visible:border-foreground/30 focus-visible:outline-none md:flex-row md:items-center"
+          >
+            <div className="relative aspect-video shrink-0 overflow-hidden rounded-lg md:w-48">
               <BlogCover title={post.title} coverImage={post.cover} className="absolute inset-0 size-full" />
-            </Link>
-          </div>
-          <div className="flex flex-1 flex-col">
-            <div className="mb-2 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-              <time dateTime={post.date} className="font-sans text-[0.6875rem] font-normal tracking-normal text-muted-foreground/50">{new Date(post.date).toLocaleDateString('en', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })}</time>
-              <span className="flex items-center gap-1"><UserIcon className="size-4" />{post.author}</span>
-              <Link to="/blog/categories/$slug" params={{ slug: taxonomySlug(post.category) }} className="hover:text-primary">{post.category}</Link>
-            </div>
-            <h2 className="mb-2 text-xl font-medium sm:text-2xl">
-              <Link to="/blog/$slug" params={{ slug: post.slug }} className="hover:text-primary">{post.title}</Link>
-            </h2>
-            {post.description ? <p className="mb-3 line-clamp-2 text-muted-foreground">{post.description}</p> : null}
-            <div className="mt-auto flex flex-wrap items-end justify-between gap-4">
-              <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => <Link key={tag} to="/blog/tags/$slug" params={{ slug: taxonomySlug(tag) }} className="inline-flex items-center gap-1 rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground hover:bg-secondary/80"><TagIcon className="size-3" />{tag}</Link>)}
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span className="inline-flex items-center gap-2 rounded-full border bg-background/90 px-3 py-1.5 text-xs font-medium shadow-xs backdrop-blur">
+                  Read article <ArrowRightIcon className="size-3" />
+                </span>
               </div>
-              <Button variant="outline" size="sm" asChild><Link to="/blog/$slug" params={{ slug: post.slug }}>Read more</Link></Button>
             </div>
-          </div>
+            <div className="flex flex-1 flex-col">
+              <div className="mb-2 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-1"><UserIcon className="size-4" />{post.author}</span>
+                <span>{post.category}</span>
+              </div>
+              <h2 className="mb-2 text-xl font-medium sm:text-2xl">{post.title}</h2>
+              {post.description ? <p className="mb-3 line-clamp-2 text-muted-foreground">{post.description}</p> : null}
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => <span key={tag} className="inline-flex items-center gap-1 rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"><TagIcon className="size-3" />{tag}</span>)}
+              </div>
+            </div>
+          </Link>
         </article>
       ))}
     </div>
