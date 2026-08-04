@@ -40,9 +40,9 @@ function BlogIndex() {
 
       <section>
         <div className="grid items-start gap-4 md:grid-cols-2">
-          {posts.slice(0, 1).map((post) => <PostCard key={post.path} post={post} />)}
+          {posts.slice(0, 1).map((post) => <PostCard key={post.path} post={post} boxed />)}
           <div className="grid content-start gap-4 sm:max-md:grid-cols-2">
-            {posts.slice(1, 4).map((post) => <PostCard key={post.path} post={post} variant="compact" />)}
+            {posts.slice(1, 4).map((post) => <PostCard key={post.path} post={post} variant="compact" boxed />)}
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ function BlogIndex() {
           </div>
           <div className="h-px bg-border" />
           <div className="grid gap-6 sm:grid-cols-2">
-            {posts.slice(4).map((post) => <PostCard key={post.path} post={post} />)}
+            {posts.slice(4).map((post) => <PostCard key={post.path} post={post} boxed />)}
           </div>
         </section>
       ) : null}
