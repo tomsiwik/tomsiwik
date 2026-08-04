@@ -18,9 +18,15 @@ function ReadArticleOverlay({ compact = false }: { compact?: boolean }) {
   );
 }
 
-function PostDate({ date }: { date: string }) {
+function PostDate({ date, accented = false }: { date: string; accented?: boolean }) {
   return (
-    <time dateTime={date} className="font-sans text-[0.6875rem] font-normal tracking-normal text-muted-foreground/50">
+    <time
+      dateTime={date}
+      className={cn(
+        'font-sans text-[0.6875rem] font-normal tracking-normal text-muted-foreground/50',
+        accented && 'text-xs font-semibold tracking-[0.08em] text-hatch-cta',
+      )}
+    >
       {new Date(date).toLocaleDateString('en', {
         day: 'numeric',
         month: 'long',
@@ -40,7 +46,7 @@ export function PostCard({ post, variant = 'default', boxed = false }: { post: B
           params={{ slug: post.slug }}
           className={cn(
             'group flex min-w-0 justify-between gap-6 focus-visible:outline-none max-sm:flex-col',
-            boxed && 'rounded-[18px] bg-muted/30 p-6 sm:p-7',
+            boxed && 'rounded-[18px] bg-muted/30 p-6 transition-colors hover:bg-muted/50 focus-visible:bg-muted/50 sm:p-7',
           )}
         >
           <div className="relative h-50 overflow-hidden rounded-lg sm:size-30 sm:shrink-0">
@@ -49,7 +55,7 @@ export function PostCard({ post, variant = 'default', boxed = false }: { post: B
           </div>
           <div className="flex min-w-0 flex-1 flex-col justify-center gap-3.5">
             <h3 className="line-clamp-2 text-base font-medium">{post.title}</h3>
-            <PostDate date={post.date} />
+            <PostDate date={post.date} accented={boxed} />
           </div>
         </Link>
       </article>
@@ -63,7 +69,7 @@ export function PostCard({ post, variant = 'default', boxed = false }: { post: B
         params={{ slug: post.slug }}
         className={cn(
           'group flex h-full min-w-0 flex-col focus-visible:outline-none',
-          boxed && 'rounded-[18px] bg-muted/30 p-6 sm:p-7',
+          boxed && 'rounded-[18px] bg-muted/30 p-6 transition-colors hover:bg-muted/50 focus-visible:bg-muted/50 sm:p-7',
         )}
       >
         <div className="relative overflow-hidden rounded-lg">
@@ -73,7 +79,7 @@ export function PostCard({ post, variant = 'default', boxed = false }: { post: B
         <div className="mt-6 flex min-w-0 flex-1 flex-col">
           <h3 className="mb-2 line-clamp-2 text-xl font-medium">{post.title}</h3>
           {post.description ? <p className="line-clamp-2 text-base text-muted-foreground">{post.description}</p> : null}
-          <div className="mt-3"><PostDate date={post.date} /></div>
+          <div className="mt-3"><PostDate date={post.date} accented={boxed} /></div>
         </div>
       </Link>
     </article>
