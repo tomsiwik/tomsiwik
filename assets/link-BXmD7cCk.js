@@ -1,1 +1,0 @@
-import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{t}from"./react-CUdNIagt.js";import{t as n}from"./jsx-runtime-B74pBk57.js";import{r}from"./button-xJ0C2Jsl.js";var i=e(t(),1),a=e(n(),1),o=i.forwardRef(function({href:e,...t},n){return(0,a.jsx)(`a`,{ref:n,href:r(e),...t})});export{o as t};
