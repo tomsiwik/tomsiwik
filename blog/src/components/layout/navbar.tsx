@@ -13,8 +13,8 @@ const HEADER_HEIGHT = 80;
 
 const ITEMS = [
   { label: 'Blog', href: '/blog' },
-  { label: 'Projects', href: '/work' },
-  { label: 'Work', href: '/services' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
 ];
 

@@ -48,7 +48,7 @@ const CARDS: PricingCard[] = [
       'Handoff Documentation',
     ],
     ctaLabel: 'Get a quote',
-    ctaHref: '/contact',
+    ctaHref: '/work',
     featured: false,
   },
   {
@@ -69,7 +69,7 @@ const CARDS: PricingCard[] = [
       'Priority Communication Via Slack Or Notion',
     ],
     ctaLabel: 'Subscribe now',
-    ctaHref: '/contact',
+    ctaHref: '/work',
     featured: true,
   },
 ];

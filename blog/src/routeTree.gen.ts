@@ -11,11 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BlogIndexRouteImport } from './routes/blog/index'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as BlogFeedDotxmlRouteImport } from './routes/blog/feed[.]xml'
-import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ServicesSlugRouteImport } from './routes/services/$slug'
 import { Route as WorkIndexRouteImport } from './routes/work/index'
 import { Route as WorkSlugRouteImport } from './routes/work/$slug'
@@ -35,11 +34,6 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -55,9 +49,9 @@ const BlogFeedDotxmlRoute = BlogFeedDotxmlRouteImport.update({
   path: '/blog/feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ServicesIndexRoute = ServicesIndexRouteImport.update({
-  id: '/services/',
-  path: '/services/',
+const ProjectsIndexRoute = ProjectsIndexRouteImport.update({
+  id: '/projects/',
+  path: '/projects/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSlugRoute = ServicesSlugRouteImport.update({
@@ -104,13 +98,12 @@ const BlogTagsSlugRoute = BlogTagsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/feed.xml': typeof BlogFeedDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog/': typeof BlogIndexRoute
-  '/services/': typeof ServicesIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
   '/work/': typeof WorkIndexRoute
   '/blog/categories/$slug': typeof BlogCategoriesSlugRoute
   '/blog/tags/$slug': typeof BlogTagsSlugRoute
@@ -121,13 +114,12 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/feed.xml': typeof BlogFeedDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog': typeof BlogIndexRoute
-  '/services': typeof ServicesIndexRoute
+  '/projects': typeof ProjectsIndexRoute
   '/work': typeof WorkIndexRoute
   '/blog/categories/$slug': typeof BlogCategoriesSlugRoute
   '/blog/tags/$slug': typeof BlogTagsSlugRoute
@@ -139,13 +131,12 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/contact': typeof ContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/feed.xml': typeof BlogFeedDotxmlRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/work/$slug': typeof WorkSlugRoute
   '/blog/': typeof BlogIndexRoute
-  '/services/': typeof ServicesIndexRoute
+  '/projects/': typeof ProjectsIndexRoute
   '/work/': typeof WorkIndexRoute
   '/blog/categories/$slug': typeof BlogCategoriesSlugRoute
   '/blog/tags/$slug': typeof BlogTagsSlugRoute
@@ -158,13 +149,12 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
-    | '/contact'
     | '/blog/$slug'
     | '/blog/feed.xml'
     | '/services/$slug'
     | '/work/$slug'
     | '/blog/'
-    | '/services/'
+    | '/projects/'
     | '/work/'
     | '/blog/categories/$slug'
     | '/blog/tags/$slug'
@@ -175,13 +165,12 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
-    | '/contact'
     | '/blog/$slug'
     | '/blog/feed.xml'
     | '/services/$slug'
     | '/work/$slug'
     | '/blog'
-    | '/services'
+    | '/projects'
     | '/work'
     | '/blog/categories/$slug'
     | '/blog/tags/$slug'
@@ -192,13 +181,12 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
-    | '/contact'
     | '/blog/$slug'
     | '/blog/feed.xml'
     | '/services/$slug'
     | '/work/$slug'
     | '/blog/'
-    | '/services/'
+    | '/projects/'
     | '/work/'
     | '/blog/categories/$slug'
     | '/blog/tags/$slug'
@@ -210,13 +198,12 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ContactRoute: typeof ContactRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogFeedDotxmlRoute: typeof BlogFeedDotxmlRoute
   ServicesSlugRoute: typeof ServicesSlugRoute
   WorkSlugRoute: typeof WorkSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
-  ServicesIndexRoute: typeof ServicesIndexRoute
+  ProjectsIndexRoute: typeof ProjectsIndexRoute
   WorkIndexRoute: typeof WorkIndexRoute
   BlogCategoriesSlugRoute: typeof BlogCategoriesSlugRoute
   BlogTagsSlugRoute: typeof BlogTagsSlugRoute
@@ -241,13 +228,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -269,11 +249,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogFeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/services/': {
-      id: '/services/'
-      path: '/services'
-      fullPath: '/services/'
-      preLoaderRoute: typeof ServicesIndexRouteImport
+    '/projects/': {
+      id: '/projects/'
+      path: '/projects'
+      fullPath: '/projects/'
+      preLoaderRoute: typeof ProjectsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services/$slug': {
@@ -338,13 +318,12 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ContactRoute: ContactRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogFeedDotxmlRoute: BlogFeedDotxmlRoute,
   ServicesSlugRoute: ServicesSlugRoute,
   WorkSlugRoute: WorkSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
-  ServicesIndexRoute: ServicesIndexRoute,
+  ProjectsIndexRoute: ProjectsIndexRoute,
   WorkIndexRoute: WorkIndexRoute,
   BlogCategoriesSlugRoute: BlogCategoriesSlugRoute,
   BlogTagsSlugRoute: BlogTagsSlugRoute,

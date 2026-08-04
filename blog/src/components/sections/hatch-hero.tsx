@@ -28,9 +28,9 @@ type HatchHeroProps = {
 };
 
 export default function HatchHero({
-  primaryCtaHref = '/contact',
+  primaryCtaHref = '/projects',
   primaryCtaLabel = 'Working on',
-  secondaryCtaHref = '/contact',
+  secondaryCtaHref = '/work',
   secondaryCtaLabel = 'Shipped',
 }: HatchHeroProps) {
   return (
