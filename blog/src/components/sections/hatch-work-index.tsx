@@ -128,17 +128,7 @@ export default function HatchWorkIndex({
             >
               Load more <ArrowRight className="ml-1 size-4" />
             </Button>
-          ) : (
-            <Button
-              asChild
-              variant="outline"
-              className="h-10 px-5 text-sm font-semibold sm:w-auto"
-            >
-              <Link href="/contact">
-                Let’s work together <ArrowRight className="ml-1 size-4" />
-              </Link>
-            </Button>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

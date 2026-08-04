@@ -79,8 +79,8 @@ export default function HatchWhatICanDo({
   description = 'End-to-end design support for founders, teams, and agencies that care about detail.',
   hideHeader = false,
   bullets = DEFAULT_BULLETS,
-  ctaLabel = 'Get started',
-  ctaHref = '/contact',
+  ctaLabel = 'View projects',
+  ctaHref = '/projects',
   services = DEFAULT_SERVICES,
 }: HatchWhatICanDoProps) {
   const list = services.slice(0, 4);

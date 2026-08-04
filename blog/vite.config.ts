@@ -37,10 +37,7 @@ export default defineConfig(({ command }) => ({
           path: '/blog/feed.xml',
         },
         {
-          path: '/contact',
-        },
-        {
-          path: '/services',
+          path: '/projects',
         },
         {
           path: '/work',

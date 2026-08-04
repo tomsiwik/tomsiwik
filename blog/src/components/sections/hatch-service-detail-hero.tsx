@@ -21,15 +21,15 @@ type ServiceDetailProps = {
 };
 
 export default function HatchServiceDetail({
-  backHref = '/services',
+  backHref = '/projects',
   title = 'Web Design & UX',
   description = `I design websites with a focus on user behavior, conversion goals, and scalability—combining strategy, research, and design to craft seamless experiences.`,
   price = '$1,500',
   priceMeta = 'Base Fee',
   primaryCtaLabel = 'Get a quote',
-  primaryCtaHref = '/contact',
+  primaryCtaHref = '/work',
   secondaryCtaLabel = 'Other services',
-  secondaryCtaHref = '/services',
+  secondaryCtaHref = '/projects',
 }: ServiceDetailProps) {
   return (
     <section className="bg-background">
