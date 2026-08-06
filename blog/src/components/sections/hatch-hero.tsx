@@ -40,20 +40,17 @@ export default function HatchHero({
           <h1 className="font-display text-4xl leading-[1.06] font-medium text-balance sm:text-5xl lg:text-6xl lg:leading-[1.05]">
             I write about my journey
             <br />
-            as a{' '}
-            <span className="relative inline-block">
-              developer
-              <TextReveal
-                as="span"
-                text="& AI Engineer"
-                hoverText="$ Vibecoder"
-                textClassName="font-display font-medium"
-                hoverTextClassName="font-pixel font-normal"
-                fontSize="3.25rem"
-                className="absolute left-full -bottom-[0.15em] z-10"
-                color="var(--primary)"
-              />
-            </span>
+            as a developer{' '}
+            <TextReveal
+              as="span"
+              text="& AI Engineer"
+              hoverText="$ Vibecoder"
+              textClassName="font-display font-medium"
+              hoverTextClassName="font-pixel font-normal"
+              fontSize="clamp(2.25rem, 4vw, 3.25rem)"
+              className="relative z-10 align-baseline sm:top-[0.44em]"
+              color="var(--primary)"
+            />
           </h1>
           <p className="font-text text-muted-foreground mt-6 text-base leading-[140%]">
             Freelanced as a{' '}
