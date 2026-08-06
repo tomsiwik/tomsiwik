@@ -70,7 +70,7 @@ const TextReveal = React.memo(function TextReveal({
 
   const rootProps: Record<string, unknown> = {
     className: cn(
-      'relative inline-block cursor-pointer select-none overflow-hidden whitespace-nowrap no-underline',
+      'inline-block cursor-pointer select-none overflow-hidden whitespace-nowrap no-underline',
       className,
     ),
     style: {
