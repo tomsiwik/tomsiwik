@@ -18,6 +18,7 @@ export interface TextRevealProps {
   className?: string;
   textClassName?: string;
   hoverTextClassName?: string;
+  contentStyle?: CSSProperties;
   style?: CSSProperties;
   fontSize?: string;
   staggerDelay?: number;
@@ -51,6 +52,7 @@ const TextReveal = React.memo(function TextReveal({
   className = '',
   textClassName = '',
   hoverTextClassName = '',
+  contentStyle,
   style,
   fontSize = '3rem',
   staggerDelay = 25,
@@ -106,7 +108,7 @@ const TextReveal = React.memo(function TextReveal({
       <span className="relative inline-grid overflow-hidden" aria-hidden="true">
         <span
           className={cn('inline-flex', textClassName)}
-          style={{ ...rowStyle, color }}
+          style={{ ...rowStyle, ...contentStyle, color }}
         >
           {chars.map((char, index) => (
             <span
@@ -126,7 +128,7 @@ const TextReveal = React.memo(function TextReveal({
         </span>
         <span
           className={cn('inline-flex', hoverTextClassName)}
-          style={{ ...rowStyle, color: hoverColor }}
+          style={{ ...rowStyle, ...contentStyle, color: hoverColor }}
         >
           {hoverChars.map((char, index) => (
             <span
