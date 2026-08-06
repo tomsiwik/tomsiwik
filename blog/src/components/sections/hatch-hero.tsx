@@ -47,6 +47,7 @@ export default function HatchHero({
               hoverText="$ Vibecoder"
               textClassName="font-display font-medium"
               hoverTextClassName="font-pixel font-normal"
+              contentStyle={{ transform: 'translate(-0.0167em, 0.1em)' }}
               fontSize="1em"
               className="align-text-bottom"
               style={{ padding: 0, lineHeight: 'inherit' }}
