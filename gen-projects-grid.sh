@@ -148,6 +148,11 @@ for entry in "${projects[@]}"; do
   fi
 done
 
+# Escape repository metadata before inserting it into SVG text nodes.
+xml_escape() {
+  printf '%s' "$1" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
+}
+
 # ── Grid ──
 cols=2
 gap=16
@@ -208,6 +213,10 @@ for i in "${!projects[@]}"; do
     desc="${desc:0:$((max_chars - 1))}…"
   fi
 
+  escaped_name="$(xml_escape "$name")"
+  escaped_desc="$(xml_escape "$desc")"
+  escaped_tag="$(xml_escape "$tag")"
+
   if [[ $col -eq 0 && $row -gt 0 ]]; then
     rule_y=$((y - row_gap / 2))
     printf '  <line class="rule" x1="16" y1="%d" x2="%d" y2="%d"/>\n' "$rule_y" "$((w - 16))" "$rule_y"
@@ -222,7 +231,7 @@ for i in "${!projects[@]}"; do
     icon="<g transform=\"translate(0,$icon_y)\" clip-path=\"url(#circle-clip)\"><rect width=\"$icon_size\" height=\"$icon_size\" fill=\"#fff\"/><image width=\"$icon_size\" height=\"$icon_size\" preserveAspectRatio=\"xMidYMid meet\" href=\"data:image/png;base64,${favicons[$i]}\"/></g>"
   else
     initial=$(printf '%s' "${name:0:1}" | tr '[:lower:]' '[:upper:]')
-    icon="<circle class=\"dot\" cx=\"16\" cy=\"$((row_h / 2))\" r=\"16\"/><text class=\"smaller bold muted\" x=\"16\" y=\"$((row_h / 2 + 4))\" text-anchor=\"middle\">$initial</text>"
+    icon="<circle class=\"dot\" cx=\"16\" cy=\"$((row_h / 2))\" r=\"16\"/><text class=\"smaller bold muted\" x=\"16\" y=\"$((row_h / 2 + 4))\" text-anchor=\"middle\">$(xml_escape "$initial")</text>"
   fi
 
   # Text: two lines vertically centered as a block
@@ -233,10 +242,10 @@ for i in "${!projects[@]}"; do
   cat <<EOF
   <g transform="translate($x,$y)">
     $icon
-    <text class="fg" x="$text_x" y="$line1_y"><tspan class="bold">$name </tspan>$(
-      [[ -n "$tag" ]] && printf '<tspan class="dimmed" font-size="10">%s</tspan>' "$tag"
+    <text class="fg" x="$text_x" y="$line1_y"><tspan class="bold">$escaped_name </tspan>$(
+      [[ -n "$tag" ]] && printf '<tspan class="dimmed" font-size="10">%s</tspan>' "$escaped_tag"
     )</text>
-    <text class="smaller muted" x="$text_x" y="$line2_y">$desc</text>
+    <text class="smaller muted" x="$text_x" y="$line2_y">$escaped_desc</text>
   </g>
 EOF
 done
