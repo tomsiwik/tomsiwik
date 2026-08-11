@@ -3,7 +3,7 @@ set -euo pipefail
 
 # ── Fetch repos with "active" topic from GitHub ──
 json=""
-for src in "user/repos?affiliation=owner&per_page=100" orgs/wild-js/repos orgs/mvp-guru/repos; do
+for src in "user/repos?affiliation=owner&per_page=100" orgs/wild-js/repos orgs/mvp-guru/repos orgs/dojofoo/repos; do
   if ! out="$(gh api --paginate "$src" 2>&1)"; then
     echo "gh api $src failed: $out" >&2
     exit 1
